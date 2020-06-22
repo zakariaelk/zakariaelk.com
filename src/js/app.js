@@ -6,7 +6,6 @@ import { gsap } from "gsap";
 import * as THREE from "three";
 import hoverEffect from "hover-effect";
 import "./vendors/jquery.ripples-min.js";
-import "./vendor.js";
 
 /*-----------------------------------------------------------------------------------*/
 /*  Masonry Grid Init
