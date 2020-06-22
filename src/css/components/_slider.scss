@@ -1,0 +1,171 @@
+/*     
+    Name: _slider.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+
+/* Classic Slider */
+
+.slider-container {
+  width: 100%;
+  height: 100%;
+  padding-bottom: 50%;
+  position: relative;
+  overflow: hidden;
+
+  @media #{$max-laptop} {
+    padding-bottom: 60%;
+  }
+
+  .slider-overlay {
+    @include size(100%, 100%);
+    background: black;
+    background-blend-mode: multiply;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.1;
+    z-index: 1;
+  }
+
+  .slider {
+    position: absolute;
+    background: black;
+    margin: 0;
+    padding: 0;
+    left: 0;
+    list-style: none;
+    width: 100%;
+    height: 100%;
+    transition: 0.5s transform cubic-bezier(0.165, 0.84, 0.44, 1);
+
+    .slide {
+      @include size(100%, 100%);
+      display: block;
+      margin: auto;
+      position: absolute;
+      top: 0;
+      bottom: 0;
+
+      .slide-img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+.slider-nav {
+  position: relative;
+  display: block;
+  text-align: left;
+  margin-top: 1rem;
+
+  @media #{$max-tablet} {
+    // bottom: -30px;
+    // right: 50%;
+    // transform: translateX(30px);
+  }
+
+  button {
+    background-image: url("../img/svg/chevron.svg");
+    background-size: 20px;
+    background-position: 55% 50%;
+    background-repeat: no-repeat;
+    border: 1px solid $colPrim;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: inline-block;
+    cursor: pointer;
+    z-index: 2;
+    transition: all cubic-bezier(0.645, 0.045, 0.355, 1) 0.25s;
+    outline: none;
+
+    &:hover {
+      background-color: color(sec);
+      background-image: url("../img/svg/chevron-b.svg");
+    }
+
+    @media #{$max-tablet} {
+      background-size: 15px;
+      width: 40px;
+      height: 40px;
+    }
+
+    @media #{$max-phone} {
+      background-size: 10px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+  .__prev {
+    transform: rotate(-180deg);
+    background-color: $colPrim;
+  }
+  .__next {
+    background-color: $colPrim;
+  }
+
+  .is-off {
+    background-color: color(sec);
+    background-image: url("../img/svg/chevron-b.svg");
+  }
+}
+
+/* Auto Moving Slider */
+
+.moving-slider {
+  @include size(90%, 100%);
+  position: relative;
+  margin-right: -70px;
+  float: right;
+
+  @media #{$max-laptop} {
+    @include size(100%, 100%);
+  }
+
+  @media #{$max-tablet} {
+    float: none;
+    margin: auto;
+  }
+
+  .slider-content {
+    height: 80vh;
+    position: relative;
+    overflow: hidden;
+
+    @media #{$max-laptop} {
+      height: 60vh;
+    }
+
+    @media #{$max-tablet} {
+      height: 40vh;
+    }
+
+    @media #{$max-phone} {
+      height: 35vh;
+      max-height: 300px;
+    }
+
+    .slide {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 100%;
+      left: -5em;
+      opacity: 0;
+      position: absolute;
+      top: 0;
+      transition: opacity 750ms linear, transform 5s 0.75s linear;
+      will-change: opacity, transform;
+      width: calc(100% + 7em);
+
+      &.displayed {
+        opacity: 1;
+        transform: translate(5em, 0);
+        transition: opacity 750ms linear, transform 15s linear;
+      }
+    }
+  }
+}

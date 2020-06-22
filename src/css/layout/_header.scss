@@ -1,0 +1,87 @@
+/*     
+    Name: _header.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+
+header {
+  position: fixed;
+  width: 100%;
+  padding: 3rem 3rem 2rem;
+  background: $white;
+  transition: $t-all;
+  z-index: 20;
+
+  @media #{$max-phone} {
+    padding: 2rem 2rem 1rem;
+  }
+
+  &.scrolled {
+    transform: translate3d(0, -1rem, 0);
+
+    @media #{$max-phone} {
+    }
+
+    .top-header {
+      align-items: flex-start;
+    }
+  }
+
+  .top-header {
+    background: $white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .logo-link {
+      align-self: center;
+      color: $black;
+      a {
+        font-weight: normal;
+        .top-part {
+          @extend .size-5;
+          font-family: $FontBold;
+          display: block;
+          line-height: 1;
+
+          @media #{$max-phone} {
+            font-size: 18px;
+          }
+        }
+
+        .bottom-part {
+          @extend .size-6;
+          font-family: $FontRegular;
+          position: absolute;
+          overflow: hidden;
+          transition: $t-all;
+
+          &:after {
+            content: "";
+            display: inline-block;
+            @include size(0%, 110%);
+            position: absolute;
+            top: -3%;
+            right: 0;
+            background-color: $white;
+            transition: all 0.5s ease;
+          }
+
+          &.scrolled {
+            @media #{$max-phone} {
+              opacity: 0;
+            }
+
+            &:after {
+              width: 100%;
+
+              @media #{$max-phone} {
+                width: 0%;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

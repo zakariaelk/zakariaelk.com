@@ -1,0 +1,140 @@
+/*     
+    Name: _typo.scss    
+    Author: Zakaria El Khachia
+    Client: Zakaria Elk
+*/
+
+/* Font Name */
+
+@font-face {
+  font-family: "ceraBold";
+  src: url("../../src/fonts/cerapro/cerapro-bold.woff") format("woff");
+  // src: url("../../src/fonts/cerapro/cerapro-bold.woff") format("woff"), url("../../src/fonts/cerapro/cerapro-bold.ttf") format("ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ceraMedium";
+  src: url("../../src/fonts/cerapro/cerapro-medium.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ceraRegular";
+  src: url("../../src/fonts/cerapro/cerapro-regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ceraLight";
+  src: url("../../src/fonts/cerapro/cerapro-light.woff") format("woff"), url("../../src/fonts/cerapro/cerapro-light.ttf") format("ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Responsive font sizes */
+
+.size-1 {
+  @include fluid-font-size(64px, 92px);
+}
+
+.size-2 {
+  @include fluid-font-size(48px, 60px);
+}
+
+.size-3 {
+  @include fluid-font-size(28px, 36px);
+}
+
+.size-4 {
+  @include fluid-font-size(24px, 28px);
+}
+
+.size-5 {
+  @include fluid-font-size(18px, 21px);
+}
+
+.size-6 {
+  @include fluid-font-size(14px, 18px);
+}
+
+.size-7 {
+  @include fluid-font-size(12px, 14px);
+}
+
+@media #{$max-laptop} {
+  .size-1 {
+    @include fluid-font-size(56px, 82px);
+  }
+
+  .size-2 {
+    @include fluid-font-size(36px, 52px);
+  }
+
+  .size-3 {
+    @include fluid-font-size(24px, 32px);
+  }
+
+  .size-4 {
+    @include fluid-font-size(21px, 24px);
+  }
+
+  .size-5 {
+    font-size: 19px;
+  }
+
+  .size-6 {
+    font-size: 18px;
+  }
+
+  .size-7 {
+    font-size: 14px;
+  }
+}
+
+@media #{$max-tablet} {
+  .size-1 {
+    @include fluid-font-size(62px, 82px);
+  }
+
+  .size-2 {
+    @include fluid-font-size(36px, 54px);
+  }
+
+  .size-3 {
+    @include fluid-font-size(20px, 26px);
+  }
+}
+
+@media #{$max-phone} {
+  .size-1 {
+    @include fluid-font-size(42px, 48px);
+  }
+
+  .size-2 {
+    @include fluid-font-size(36px, 42px);
+  }
+
+  .size-3 {
+    font-size: 24px;
+  }
+
+  .size-4 {
+    font-size: 21px;
+  }
+
+  .size-5 {
+    font-size: 16px;
+  }
+
+  .size-6 {
+    font-size: 14px;
+  }
+
+  .size-7 {
+    font-size: 12px;
+  }
+}

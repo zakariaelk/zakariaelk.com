@@ -1,0 +1,457 @@
+/*     
+    Name: _welcome.scss    
+    Author: Zakaria El Khachia
+    Client: Zakaria Elk
+*/
+
+#home {
+  .side-visual {
+    position: absolute;
+    width: 768px;
+    height: 768px;
+    top: 30%;
+    right: 0px;
+    opacity: 0;
+    transition: all 1s ease;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    @media #{$max-laptop} {
+      width: 600px;
+      height: 600px;
+    }
+
+    @media #{$max-tablet} {
+      top: 90%;
+      width: 560px;
+      height: 560px;
+      transform: translateY(-70%);
+    }
+
+    @media #{$max-phone} {
+      width: 420px;
+      height: 420px;
+    }
+
+    &.on {
+      opacity: 1;
+    }
+
+    img {
+      width: 100%;
+      height: auto;
+      right: -100px;
+    }
+
+    canvas {
+      height: 100%;
+      display: block;
+    }
+
+    &.scrolled {
+      top: 40%;
+      right: -80px;
+      transform: translateY(-40%);
+    }
+  }
+
+  #home-welcome {
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 180px;
+
+    @media #{$max-phone} {
+      margin-bottom: 140px;
+    }
+
+    .welcome-content {
+      @include size(100%, 100%);
+      display: table;
+
+      .welcome-statement {
+        width: 100%;
+        padding: 0 3rem;
+        z-index: 1;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate3d(0, -50%, 0);
+
+        @media #{$max-tablet} {
+          top: 50%;
+        }
+
+        @media #{$max-phone} {
+          top: 35%;
+          padding: 0 2rem;
+        }
+
+        div {
+          position: relative;
+          overflow: hidden;
+
+          &.dynamic-welcome {
+            height: 120px;
+            @extend .size-1;
+            font-family: $FontBold;
+            letter-spacing: -3px;
+            margin-bottom: 0rem;
+
+            @media #{$max-laptop} {
+              height: 100px;
+            }
+
+            @media only screen and (max-width: 991px) {
+              height: auto;
+              overflow: visible;
+            }
+
+            @media #{$max-tablet} {
+              margin-bottom: 0;
+            }
+            @media #{$max-phone} {
+              font-size: 36px;
+              margin-bottom: 0;
+              letter-spacing: -1px;
+            }
+          }
+
+          &.static-welcome {
+            height: 90px;
+            @extend .size-2;
+            font-family: $FontLight;
+            letter-spacing: -3px;
+            margin-bottom: 0.2rem;
+
+            @media #{$max-laptop} {
+              height: 70px;
+            }
+
+            @media only screen and (max-width: 991px) {
+              height: auto;
+              overflow: visible;
+            }
+
+            @media #{$max-phone} {
+              max-width: 300px;
+              font-size: 32px;
+              margin-bottom: 0.4rem;
+              letter-spacing: -2px;
+              line-height: 1.2;
+            }
+          }
+
+          span {
+            position: absolute;
+            opacity: 0;
+            transform: translate3d(0, 100px, 0);
+            transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+            @media only screen and (max-width: 991px) {
+              position: relative;
+            }
+          }
+        }
+
+        .discover {
+          position: relative;
+          font-family: $FontRegular;
+          text-decoration: underline;
+          display: block;
+          opacity: 0;
+          transform: translate3d(0, 0, 0);
+          transition: all 0.3s ease;
+
+          &:hover {
+            transform: translate3d(0.2rem, 0, 0) skewX(-10deg);
+
+            @media only screen and (max-width: 991px) {
+              transform: translate3d(0rem, 0.6rem, 0) skewX(-10deg);
+            }
+          }
+
+          @media only screen and (max-width: 991px) {
+            transform: translate3d(0rem, 0.6rem, 0);
+          }
+        }
+
+        &.on {
+          span {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+          }
+        }
+      }
+    }
+  }
+
+  #home-work {
+    .boxed {
+      @media #{$max-phone} {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+    .project-container {
+      padding-top: 120px;
+      padding-bottom: 120px;
+
+      @media #{$max-tablet} {
+        padding-top: 35px;
+        padding-bottom: 35px;
+      }
+
+      @media #{$max-phone} {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+      }
+
+      .item {
+        max-width: 1140px;
+        width: 100%;
+        height: 85vh;
+        max-height: 640px;
+        margin: auto;
+        display: block;
+        position: relative;
+        box-sizing: content-box;
+        cursor: pointer;
+
+        @media #{$max-laptop} {
+          height: 75vh;
+          max-width: 991px;
+          max-height: 650px;
+        }
+
+        @media only screen and (max-width: 1200px) {
+          max-height: 540px;
+        }
+
+        @media #{$max-tablet} {
+          height: 360px;
+          max-height: 100%;
+        }
+
+        @media #{$max-phone} {
+          width: 100%;
+          height: 320px;
+          padding-bottom: 0;
+          opacity: 0;
+          transition: $t-all;
+        }
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          right: 0;
+          background-color: $white;
+          transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+          @media #{$max-phone} {
+            display: none;
+          }
+        }
+
+        &.on {
+          @media #{$max-phone} {
+            opacity: 1;
+          }
+          &:after {
+            width: 0;
+          }
+
+          h3 {
+            opacity: 1;
+          }
+        }
+
+        img {
+          position: relative;
+
+          &.img-1 {
+            display: none;
+            @media #{$max-tablet} {
+              @include size(100%, 100%);
+              display: block;
+              object-fit: cover;
+            }
+          }
+
+          &.img-2 {
+            display: none;
+
+            // @media #{$max-tablet} {
+            //   @include size(100%, 100%);
+            //   display: block;
+            //   object-fit: cover;
+            // }
+          }
+        }
+
+        .project-title {
+          @extend .size-3;
+          position: absolute;
+          color: $white;
+          bottom: 1.75rem;
+          left: 2rem;
+          opacity: 0;
+          text-transform: capitalize;
+          overflow: hidden;
+          text-shadow: 1px 1px 8px #a0a0a0;
+          transform: translate3d(0, 0, 0);
+          transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+          @media #{$max-phone} {
+            display: none;
+          }
+
+          &:after {
+            content: "_";
+            @extend .size-3;
+            display: inline-block;
+            vertical-align: top;
+            margin-left: 0px;
+            color: $white;
+            animation: fadeChevron 1s infinite;
+          }
+        }
+
+        .project-desc {
+          @extend .size-4;
+          position: absolute;
+          color: $black;
+          font-family: $FontBold;
+          min-width: 130px;
+          opacity: 0;
+          bottom: 0;
+          left: 2rem;
+          transform-origin: center;
+          transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+          z-index: -1;
+
+          @media #{$max-phone} {
+            opacity: 1;
+            color: $black;
+            left: 1rem;
+            transform: translateY(30px);
+            font-size: 18px;
+            text-shadow: none;
+            overflow: visible;
+          }
+        }
+
+        .project-date {
+          @extend .size-5;
+          position: absolute;
+          color: $black;
+          font-family: $FontBold;
+          opacity: 0;
+          bottom: 0;
+          right: -30px;
+          writing-mode: tb-rl;
+          -ms-writing-mode: tb-rl;
+          transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+          z-index: -1;
+
+          @media #{$max-phone} {
+            font-size: 1rem;
+          }
+        }
+
+        .project-more {
+          @extend .size-5;
+          position: absolute;
+          text-transform: lowercase;
+          color: $black;
+          font-family: $FontBold;
+          opacity: 0;
+          bottom: 0;
+          right: 2rem;
+          transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+          z-index: -1;
+
+          &:after {
+            content: ">";
+            display: inline-block;
+            vertical-align: middle;
+            height: 100%;
+            margin-left: 4px;
+            color: $black;
+            animation: fadeChevron 1s linear infinite;
+          }
+
+          @media #{$max-phone} {
+            font-size: 16px;
+            right: 1rem;
+            transform: translateY(30px);
+            opacity: 1;
+
+            &:after {
+              padding-top: 2px;
+            }
+          }
+        }
+
+        canvas {
+          padding-bottom: 30px;
+
+          @media #{$max-tablet} {
+            display: none;
+          }
+        }
+
+        /* Hover Status on Work Item */
+
+        &:hover {
+          padding-bottom: 30px;
+
+          @media #{$max-phone} {
+            padding-bottom: 0;
+          }
+
+          h3 {
+            opacity: 0;
+            transform: scale(0.6) translate3d(-4rem, 1em, 0);
+
+            @media #{$max-phone} {
+              display: none;
+            }
+          }
+
+          .project-desc {
+            opacity: 1;
+            transform: translate3d(-2rem, 20px, 0);
+
+            @media #{$max-phone} {
+              transform: translateY(30px);
+            }
+          }
+
+          .project-date {
+            opacity: 1;
+            right: -30px;
+
+            @media #{$max-phone} {
+              right: -20px;
+            }
+          }
+
+          .project-more {
+            opacity: 1;
+            transform: translate3d(2rem, 12px, 0);
+
+            @media #{$max-phone} {
+              transform: translateY(30px);
+            }
+          }
+
+          canvas {
+          }
+        }
+      }
+    }
+  }
+}

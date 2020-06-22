@@ -1,0 +1,69 @@
+/*     
+    Name: _common.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+
+.page-content {
+  @extend .clearfix;
+  @include size(100%, 100%);
+  // position: relative;
+  // overflow: hidden;
+
+  @media #{$max-phone} {
+  }
+}
+
+.content-wrapper {
+  margin-left: 120px;
+
+  section {
+    padding-top: 140px;
+    padding-bottom: 140px;
+  }
+}
+
+.boxed {
+  padding-left: 3rem;
+  padding-right: 3rem;
+
+  @media #{$max-tablet} {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+
+  @media #{$max-phone} {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.full {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.intro {
+  margin-bottom: 1rem;
+}
+
+.headline {
+  @extend .size-2;
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.intro-text {
+  width: 50%;
+
+  @media #{$max-phone} {
+    width: 100%;
+  }
+}
+
+.left-m,
+.right-m {
+  img {
+    width: 100%;
+  }
+}

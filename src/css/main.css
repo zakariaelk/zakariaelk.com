@@ -1,0 +1,2855 @@
+/*     
+    Name: _variables.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+/* Colors */
+/* Fonts */
+/* Transforms */
+/* Breakpoints */
+/*     
+    Name: _animations.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+/* Reveal Content */
+.reveal-x {
+  opacity: 0;
+  -webkit-transform: translateX(-70px);
+          transform: translateX(-70px);
+  -webkit-transition: 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+  transition: 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s;
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+  will-change: transform;
+}
+
+.reveal-y {
+  opacity: 0;
+  -webkit-transform: translateY(100px);
+          transform: translateY(100px);
+  -webkit-transition: 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+  transition: 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s;
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+  will-change: transform;
+}
+
+.reveal-anim {
+  -webkit-transition: 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+  transition: 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s;
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s, 0.75s -webkit-transform cubic-bezier(0.32, 1.01, 0.35, 1.01);
+}
+
+/* Reveal Text */
+.reveal-text,
+.reveal-text::after {
+  -webkit-animation-delay: var(--animation-delay, 2s);
+          animation-delay: var(--animation-delay, 2s);
+  -webkit-animation-iteration-count: var(--iterations, 1);
+          animation-iteration-count: var(--iterations, 1);
+  -webkit-animation-duration: var(--duration, 800ms);
+          animation-duration: var(--duration, 800ms);
+  -webkit-animation-fill-mode: both;
+          animation-fill-mode: both;
+  -webkit-animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+          animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.reveal-text {
+  --animation-delay: var(--delay, 0);
+  --animation-duration: var(--duration, 800ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  -webkit-animation-name: clip-text;
+          animation-name: clip-text;
+  white-space: nowrap;
+  opacity: 1 !important;
+}
+
+.reveal-text::after {
+  content: "";
+  position: absolute;
+  z-index: 999;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: white;
+  -webkit-transform: scaleX(0);
+          transform: scaleX(0);
+  -webkit-transform-origin: 0 50%;
+          transform-origin: 0 50%;
+  pointer-events: none;
+  -webkit-animation-name: text-revealer;
+          animation-name: text-revealer;
+}
+
+@-webkit-keyframes clip-text {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes clip-text {
+  from {
+    -webkit-clip-path: inset(0 100% 0 0);
+            clip-path: inset(0 100% 0 0);
+  }
+  to {
+    -webkit-clip-path: inset(0 0 0 0);
+            clip-path: inset(0 0 0 0);
+  }
+}
+
+@-webkit-keyframes text-revealer {
+  0%,
+  50% {
+    -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+  }
+  60%,
+  100% {
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+  }
+  60% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@keyframes text-revealer {
+  0%,
+  50% {
+    -webkit-transform-origin: 0 50%;
+            transform-origin: 0 50%;
+  }
+  60%,
+  100% {
+    -webkit-transform-origin: 100% 50%;
+            transform-origin: 100% 50%;
+  }
+  60% {
+    -webkit-transform: scaleX(1);
+            transform: scaleX(1);
+  }
+  100% {
+    -webkit-transform: scaleX(0);
+            transform: scaleX(0);
+  }
+}
+
+@-webkit-keyframes slideLink {
+  0% {
+    opacity: 0;
+    left: -2rem;
+  }
+  20% {
+    opacity: 1;
+    left: 0rem;
+  }
+  80% {
+    opacity: 1;
+    left: 0rem;
+  }
+  100% {
+    left: 2rem;
+    opacity: 0;
+  }
+}
+
+@keyframes slideLink {
+  0% {
+    opacity: 0;
+    left: -2rem;
+  }
+  20% {
+    opacity: 1;
+    left: 0rem;
+  }
+  80% {
+    opacity: 1;
+    left: 0rem;
+  }
+  100% {
+    left: 2rem;
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes chevronBounce {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@keyframes chevronBounce {
+  0% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+  50% {
+    -webkit-transform: translateY(20%);
+            transform: translateY(20%);
+  }
+  100% {
+    -webkit-transform: translateY(0%);
+            transform: translateY(0%);
+  }
+}
+
+@-webkit-keyframes spinLoader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes spinLoader {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes fadeChevron {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeChevron {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes slideChevron {
+  0% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+    opacity: 0;
+  }
+  15% {
+    -webkit-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+    opacity: 1;
+  }
+  85% {
+    -webkit-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(50%, 0, 0);
+            transform: translate3d(50%, 0, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes slideChevron {
+  0% {
+    -webkit-transform: translate3d(-50%, 0, 0);
+            transform: translate3d(-50%, 0, 0);
+    opacity: 0;
+  }
+  15% {
+    -webkit-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+    opacity: 1;
+  }
+  85% {
+    -webkit-transform: translate3d(0%, 0, 0);
+            transform: translate3d(0%, 0, 0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: translate3d(50%, 0, 0);
+            transform: translate3d(50%, 0, 0);
+    opacity: 0;
+  }
+}
+
+/* Functions */
+/* Mixins */
+/*
+    HTML5 Reset :: reset.css
+    ----------------------------------------------------------
+    We have learned much from/been inspired by/taken code where offered from:
+
+    Eric Meyer                  :: http://ericmeyer.com
+    HTML5 Doctor                :: http://html5doctor.com
+    and the HTML5 Boilerplate   :: http://html5boilerplate.com
+
+-------------------------------------------------------------------------------*/
+/* Let's default this puppy out
+-------------------------------------------------------------------------------*/
+html,
+body,
+body div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+small,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+
+article,
+aside,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section {
+  display: block;
+}
+
+/* Responsive images and other embedded objects
+   Note: keeping IMG here will cause problems if you're using foreground images as sprites.
+   If this default setting for images is causing issues, you might want to replace it with a .responsive class instead. */
+img,
+object,
+embed {
+  max-width: 100%;
+}
+
+/* force a vertical scrollbar to prevent a jumpy page */
+/* we use a lot of ULs that aren't bulleted.
+  don't forget to restore the bullets within content. */
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  text-decoration: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted #000;
+  cursor: help;
+}
+
+/* tables still need cellspacing="0" in the markup */
+th {
+  font-weight: bold;
+  vertical-align: bottom;
+}
+
+td {
+  font-weight: normal;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+pre {
+  white-space: pre;
+  /* CSS2 */
+  white-space: pre-wrap;
+  /* CSS 2.1 */
+  white-space: pre-line;
+  /* CSS 3 (and 2.1 as well, actually) */
+  word-wrap: break-word;
+  /* IE */
+}
+
+input[type="radio"] {
+  vertical-align: text-bottom;
+}
+
+input[type="checkbox"] {
+  vertical-align: bottom;
+  *vertical-align: baseline;
+}
+
+select,
+input,
+textarea {
+  font: 99% sans-serif;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: inherit;
+}
+
+/* Accessible focus treatment
+    people.opera.com/patrickl/experiments/keyboard/test
+a:hover,
+a:focus,
+a:active {
+  outline: none;
+}*/
+small {
+  font-size: 85%;
+}
+
+strong,
+th {
+  font-weight: bold;
+}
+
+td,
+td img {
+  vertical-align: top;
+}
+
+/* Make sure sup and sub don't screw with your line-heights
+    gist.github.com/413930 */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+}
+
+sup {
+  top: -0.5em;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+/* standardize any monospaced elements */
+pre,
+code,
+kbd,
+samp {
+  font-family: monospace, sans-serif;
+}
+
+/* hand cursor on clickable elements */
+.clickable,
+input[type="button"],
+input[type="submit"],
+button {
+  cursor: pointer;
+}
+
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+  -webkit-appearance: button;
+  /* Style clickable inputs in iOS */
+}
+
+/* Webkit browsers add a 2px margin outside the chrome of form elements */
+button,
+input,
+select,
+textarea {
+  margin: 0;
+}
+
+/* make buttons play nice in IE */
+/* button {width: auto; overflow: visible;} */
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  /* Inner padding and border oddities in FF3/4 */
+  padding: 0;
+  border: 0;
+}
+
+/* let's clear some floats */
+.clearfix:before, .page-content:before,
+.clearfix:after,
+.page-content:after {
+  content: "\0020";
+  display: block;
+  height: 0;
+  overflow: hidden;
+}
+
+
+.clearfix:after,
+.page-content:after {
+  clear: both;
+}
+
+.clearfix, .page-content {
+  zoom: 1;
+}
+
+/* new Linux- and Windows-friendly sans-serif font stack: http://mky.be/fontstack */
+body {
+  font: 16px Helmet, Freesans, sans-serif;
+}
+
+body,
+html {
+  width: 100%;
+  height: 100%;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+button {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/*::-moz-selection{background: #fcd700; color: #fff; text-shadow: none;}
+::selection {background: #fcd700; color: #fff; text-shadow: none;}*/
+/*a:link {-webkit-tap-highlight-color: #fcd700;}*/
+input,
+select {
+  -webkit-appearance: none;
+  border-radius: 0px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p,
+span,
+li,
+q,
+th,
+td,
+input,
+div {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+input,
+button {
+  outline: none;
+}
+
+/*     
+    Name: _base.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "ceraRegular", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+}
+
+/**
+ * Basic styles for Main
+ */
+header,
+main,
+footer {
+  width: 100%;
+}
+
+/* Anchor */
+a {
+  text-decoration: none;
+  font-weight: 400;
+  -webkit-transition: 0.25s ease;
+  transition: 0.25s ease;
+  color: #010101;
+}
+
+a:hover {
+  opacity: 1 !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+@media only screen and (max-width: 600px) {
+  h1 {
+    letter-spacing: -1px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h2 {
+    letter-spacing: -1px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  h3 {
+    letter-spacing: -1px;
+  }
+}
+
+h3 {
+  line-height: 1.4;
+}
+
+/*     
+    Name: _typo.scss    
+    Author: Zakaria El Khachia
+    Client: Zakaria Elk
+*/
+/* Font Name */
+@font-face {
+  font-family: "ceraBold";
+  src: url("../../src/fonts/cerapro/cerapro-bold.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ceraMedium";
+  src: url("../../src/fonts/cerapro/cerapro-medium.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ceraRegular";
+  src: url("../../src/fonts/cerapro/cerapro-regular.woff") format("woff");
+  font-style: normal;
+  font-weight: normal;
+}
+
+@font-face {
+  font-family: "ceraLight";
+  src: url("../../src/fonts/cerapro/cerapro-light.woff") format("woff"), url("../../src/fonts/cerapro/cerapro-light.ttf") format("ttf");
+  font-style: normal;
+  font-weight: normal;
+}
+
+/* Responsive font sizes */
+.size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+  font-size: 64px;
+}
+
+@media (min-width: 320px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: calc(57px + 100vw * 0.02187);
+  }
+}
+
+@media (min-width: 1600px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: 92px;
+  }
+}
+
+.size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+  font-size: 48px;
+}
+
+@media (min-width: 320px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: calc(45px + 100vw * 0.00937);
+  }
+}
+
+@media (min-width: 1600px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: 60px;
+  }
+}
+
+.size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+  font-size: 28px;
+}
+
+@media (min-width: 320px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: calc(26px + 100vw * 0.00625);
+  }
+}
+
+@media (min-width: 1600px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 36px;
+  }
+}
+
+.size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+  font-size: 24px;
+}
+
+@media (min-width: 320px) {
+  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+    font-size: calc(23px + 100vw * 0.00313);
+  }
+}
+
+@media (min-width: 1600px) {
+  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+    font-size: 28px;
+  }
+}
+
+.size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+  font-size: 18px;
+}
+
+@media (min-width: 320px) {
+  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+    font-size: calc(17.25px + 100vw * 0.00234);
+  }
+}
+
+@media (min-width: 1600px) {
+  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+    font-size: 21px;
+  }
+}
+
+.size-6, html,
+body, header .top-header .logo-link a .bottom-part, #work .next-post-nav .next-link {
+  font-size: 14px;
+}
+
+@media (min-width: 320px) {
+  .size-6, html,
+  body, header .top-header .logo-link a .bottom-part, #work .next-post-nav .next-link {
+    font-size: calc(13px + 100vw * 0.00313);
+  }
+}
+
+@media (min-width: 1600px) {
+  .size-6, html,
+  body, header .top-header .logo-link a .bottom-part, #work .next-post-nav .next-link {
+    font-size: 18px;
+  }
+}
+
+.size-7 {
+  font-size: 12px;
+}
+
+@media (min-width: 320px) {
+  .size-7 {
+    font-size: calc(11.5px + 100vw * 0.00156);
+  }
+}
+
+@media (min-width: 1600px) {
+  .size-7 {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: 56px;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 320px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: calc(49.5px + 100vw * 0.02031);
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1600px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: 82px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 320px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: calc(32px + 100vw * 0.0125);
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1600px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: 52px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 320px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: calc(22px + 100vw * 0.00625);
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1600px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 32px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+    font-size: 21px;
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 320px) {
+  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+    font-size: calc(20.25px + 100vw * 0.00234);
+  }
+}
+
+@media only screen and (max-width: 1440px) and (min-width: 1600px) {
+  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+    font-size: 24px;
+  }
+}
+
+@media only screen and (max-width: 1440px) {
+  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+    font-size: 19px;
+  }
+  .size-6, html,
+  body, header .top-header .logo-link a .bottom-part, #work .next-post-nav .next-link {
+    font-size: 18px;
+  }
+  .size-7 {
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: 62px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: calc(57px + 100vw * 0.01562);
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 1600px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: 82px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: calc(31.5px + 100vw * 0.01406);
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 1600px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: 54px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 320px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: calc(18.5px + 100vw * 0.00469);
+  }
+}
+
+@media only screen and (max-width: 768px) and (min-width: 1600px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: calc(40.5px + 100vw * 0.00469);
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 1600px) {
+  .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: 48px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: 36px;
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 320px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: calc(34.5px + 100vw * 0.00469);
+  }
+}
+
+@media only screen and (max-width: 600px) and (min-width: 1600px) {
+  .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
+    font-size: 42px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 24px;
+  }
+  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+    font-size: 21px;
+  }
+  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+    font-size: 16px;
+  }
+  .size-6, html,
+  body, header .top-header .logo-link a .bottom-part, #work .next-post-nav .next-link {
+    font-size: 14px;
+  }
+  .size-7 {
+    font-size: 12px;
+  }
+}
+
+/*     
+    Name: _helpers.scss    
+    Author: Zakaria El Khachia
+    Client: Zakaria Elk
+*/
+/**
+ * Clear inner floats
+ */
+
+.clearfix:after,
+.page-content:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix, .page-content {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix, html[xmlns] .page-content {
+  display: block;
+}
+
+* html .clearfix, * html .page-content {
+  height: 1%;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.fixed-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.neg-z-index {
+  z-index: -1;
+}
+
+.pos-z-index {
+  z-index: 1;
+}
+
+.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.highlight {
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.zhFont {
+  font-family: "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.full-background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.highlight {
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.highlight-u {
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  text-decoration: underline;
+}
+
+.d-table {
+  height: 100%;
+  display: table;
+}
+
+.v-middle {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+
+/*     
+    Name: _media.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+/*     
+    Name: _header.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+header {
+  position: fixed;
+  width: 100%;
+  padding: 3rem 3rem 2rem;
+  background: #ffffff;
+  -webkit-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  z-index: 20;
+}
+
+@media only screen and (max-width: 600px) {
+  header {
+    padding: 2rem 2rem 1rem;
+  }
+}
+
+header.scrolled {
+  -webkit-transform: translate3d(0, -1rem, 0);
+          transform: translate3d(0, -1rem, 0);
+}
+
+header.scrolled .top-header {
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+header .top-header {
+  background: #ffffff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+header .top-header .logo-link {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #010101;
+}
+
+header .top-header .logo-link a {
+  font-weight: normal;
+}
+
+header .top-header .logo-link a .top-part {
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  display: block;
+  line-height: 1;
+}
+
+@media only screen and (max-width: 600px) {
+  header .top-header .logo-link a .top-part {
+    font-size: 18px;
+  }
+}
+
+header .top-header .logo-link a .bottom-part {
+  font-family: "ceraRegular", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  position: absolute;
+  overflow: hidden;
+  -webkit-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+}
+
+header .top-header .logo-link a .bottom-part:after {
+  content: "";
+  display: inline-block;
+  width: 0%;
+  height: 110%;
+  position: absolute;
+  top: -3%;
+  right: 0;
+  background-color: #ffffff;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+@media only screen and (max-width: 600px) {
+  header .top-header .logo-link a .bottom-part.scrolled {
+    opacity: 0;
+  }
+}
+
+header .top-header .logo-link a .bottom-part.scrolled:after {
+  width: 100%;
+}
+
+@media only screen and (max-width: 600px) {
+  header .top-header .logo-link a .bottom-part.scrolled:after {
+    width: 0%;
+  }
+}
+
+/*     
+    Name: _footer.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+/*     
+    Name: _nav.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+/* Nav Toggle */
+/* Nav Menu */
+@media only screen and (max-width: 600px) {
+  .nav-wrapper {
+    right: 2rem;
+    -webkit-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    opacity: 0;
+    visibility: hidden;
+  }
+  .nav-wrapper.scrolled {
+    opacity: 1;
+    visibility: visible;
+  }
+}
+
+.nav-wrapper .nav-container .nav-menu a {
+  text-transform: lowercase;
+  position: relative;
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  overflow: hidden;
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0;
+  z-index: 30;
+  right: 15px;
+  -webkit-transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-wrapper .nav-container .nav-menu a {
+    right: 0;
+  }
+}
+
+.nav-wrapper .nav-container .nav-menu a .chevron {
+  width: 22px;
+  height: 23px;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-wrapper .nav-container .nav-menu a .chevron .chevron-bg {
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.nav-wrapper .nav-container .nav-menu a .chevron .chevron-triangle {
+  -webkit-transform: translate3d(-100%, 0, 0);
+          transform: translate3d(-100%, 0, 0);
+  -webkit-transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+.nav-wrapper .nav-container .nav-menu a:hover {
+  -webkit-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+}
+
+.nav-wrapper .nav-container .nav-menu a:hover:before {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+
+.nav-wrapper .nav-container .nav-menu a:hover .chevron .chevron-bg {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+
+.nav-wrapper .nav-container .nav-menu a:hover .chevron .chevron-triangle {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+
+/*     
+    Name: _common.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+.page-content {
+  width: 100%;
+  height: 100%;
+}
+
+.content-wrapper {
+  margin-left: 120px;
+}
+
+.content-wrapper section {
+  padding-top: 140px;
+  padding-bottom: 140px;
+}
+
+.boxed {
+  padding-left: 3rem;
+  padding-right: 3rem;
+}
+
+@media only screen and (max-width: 768px) {
+  .boxed {
+    padding-left: 3rem;
+    padding-right: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .boxed {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+.full {
+  padding-left: 0px;
+  padding-right: 0px;
+}
+
+.intro {
+  margin-bottom: 1rem;
+}
+
+.headline {
+  display: inline-block;
+  margin-bottom: 1.2rem;
+}
+
+.intro-text {
+  width: 50%;
+}
+
+@media only screen and (max-width: 600px) {
+  .intro-text {
+    width: 100%;
+  }
+}
+
+.left-m img,
+.right-m img {
+  width: 100%;
+}
+
+/*     
+    Name: _grid.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+/* Grid System */
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+.container-l {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+.col-1 {
+  -ms-flex-preferred-size: 8.33333%;
+      flex-basis: 8.33333%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-1 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-2 {
+  -ms-flex-preferred-size: 16.66667%;
+      flex-basis: 16.66667%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-2 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-3 {
+  -ms-flex-preferred-size: 25%;
+      flex-basis: 25%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-3 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-4 {
+  -ms-flex-preferred-size: 33.33333%;
+      flex-basis: 33.33333%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-4 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-5 {
+  -ms-flex-preferred-size: 41.66667%;
+      flex-basis: 41.66667%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-5 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-6 {
+  -ms-flex-preferred-size: 50%;
+      flex-basis: 50%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-6 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-7 {
+  -ms-flex-preferred-size: 58.33333%;
+      flex-basis: 58.33333%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-7 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-8 {
+  -ms-flex-preferred-size: 66.66667%;
+      flex-basis: 66.66667%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-8 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-9 {
+  -ms-flex-preferred-size: 75%;
+      flex-basis: 75%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-9 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-10 {
+  -ms-flex-preferred-size: 83.33333%;
+      flex-basis: 83.33333%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-10 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-11 {
+  -ms-flex-preferred-size: 91.66667%;
+      flex-basis: 91.66667%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-11 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+.col-12 {
+  -ms-flex-preferred-size: 100%;
+      flex-basis: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  .col-12 {
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+  }
+}
+
+/* Isotop Masonry */
+/* Grid Item Sizer*/
+.grid-sizer,
+.grid-item {
+  width: 47%;
+}
+
+.gutter-sizer {
+  width: 6%;
+}
+
+/* Grid Item */
+.grid-item {
+  float: right;
+  margin-bottom: 5rem;
+}
+
+/* Floated Columns */
+.col-wrapper {
+  position: relative;
+}
+
+.col {
+  position: relative;
+  width: calc(100% * 1 / 2);
+}
+
+.col:nth-child(2n + 1) {
+  clear: both;
+  float: left;
+}
+
+.col:nth-child(2n + 2) {
+  clear: none;
+  float: right;
+}
+
+/* Col Padding */
+.left-t,
+.left-m {
+  padding-right: 5%;
+}
+
+.right-t,
+.right-m {
+  padding-left: 5%;
+}
+
+/*     
+    Name: _home.scss    
+    Author: TrioTech
+    Client:
+*/
+#loader {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #ffffff;
+  opacity: 1;
+  z-index: 5;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+#loader.off {
+  opacity: 0;
+  visibility: hidden;
+}
+
+#loader .loader-content {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  border-width: 5px 5px 5px 5px;
+  border-color: #010101;
+  border-style: solid;
+  border-radius: 50%;
+  border-right-color: #ffffff;
+  background-color: #ffffff;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  -webkit-animation: spinLoader 1s ease-in-out infinite;
+          animation: spinLoader 1s ease-in-out infinite;
+}
+
+/*     
+    Name: _button.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+/* Button */
+svg,
+.label,
+.arrow {
+  pointer-events: none;
+}
+
+/*     
+    Name: _welcome.scss    
+    Author: Zakaria El Khachia
+    Client: Zakaria Elk
+*/
+#home .side-visual {
+  position: absolute;
+  width: 768px;
+  height: 768px;
+  top: 30%;
+  right: 0px;
+  opacity: 0;
+  -webkit-transition: all 1s ease;
+  transition: all 1s ease;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media only screen and (max-width: 1440px) {
+  #home .side-visual {
+    width: 600px;
+    height: 600px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #home .side-visual {
+    top: 90%;
+    width: 560px;
+    height: 560px;
+    -webkit-transform: translateY(-70%);
+            transform: translateY(-70%);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #home .side-visual {
+    width: 420px;
+    height: 420px;
+  }
+}
+
+#home .side-visual.on {
+  opacity: 1;
+}
+
+#home .side-visual img {
+  width: 100%;
+  height: auto;
+  right: -100px;
+}
+
+#home .side-visual canvas {
+  height: 100%;
+  display: block;
+}
+
+#home .side-visual.scrolled {
+  top: 40%;
+  right: -80px;
+  -webkit-transform: translateY(-40%);
+          transform: translateY(-40%);
+}
+
+#home #home-welcome {
+  width: 100%;
+  height: 100vh;
+  margin-bottom: 180px;
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-welcome {
+    margin-bottom: 140px;
+  }
+}
+
+#home #home-welcome .welcome-content {
+  width: 100%;
+  height: 100%;
+  display: table;
+}
+
+#home #home-welcome .welcome-content .welcome-statement {
+  width: 100%;
+  padding: 0 3rem;
+  z-index: 1;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translate3d(0, -50%, 0);
+          transform: translate3d(0, -50%, 0);
+}
+
+@media only screen and (max-width: 768px) {
+  #home #home-welcome .welcome-content .welcome-statement {
+    top: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-welcome .welcome-content .welcome-statement {
+    top: 35%;
+    padding: 0 2rem;
+  }
+}
+
+#home #home-welcome .welcome-content .welcome-statement div {
+  position: relative;
+  overflow: hidden;
+}
+
+#home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+  height: 120px;
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  letter-spacing: -3px;
+  margin-bottom: 0rem;
+}
+
+@media only screen and (max-width: 1440px) {
+  #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    height: 100px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    margin-bottom: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
+    font-size: 36px;
+    margin-bottom: 0;
+    letter-spacing: -1px;
+  }
+}
+
+#home #home-welcome .welcome-content .welcome-statement div.static-welcome {
+  height: 90px;
+  font-family: "ceraLight", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  letter-spacing: -3px;
+  margin-bottom: 0.2rem;
+}
+
+@media only screen and (max-width: 1440px) {
+  #home #home-welcome .welcome-content .welcome-statement div.static-welcome {
+    height: 70px;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-welcome .welcome-content .welcome-statement div.static-welcome {
+    height: auto;
+    overflow: visible;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-welcome .welcome-content .welcome-statement div.static-welcome {
+    max-width: 300px;
+    font-size: 32px;
+    margin-bottom: 0.4rem;
+    letter-spacing: -2px;
+    line-height: 1.2;
+  }
+}
+
+#home #home-welcome .welcome-content .welcome-statement div span {
+  position: absolute;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 100px, 0);
+          transform: translate3d(0, 100px, 0);
+  -webkit-transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-welcome .welcome-content .welcome-statement div span {
+    position: relative;
+  }
+}
+
+#home #home-welcome .welcome-content .welcome-statement .discover {
+  position: relative;
+  font-family: "ceraRegular", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  text-decoration: underline;
+  display: block;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#home #home-welcome .welcome-content .welcome-statement .discover:hover {
+  -webkit-transform: translate3d(0.2rem, 0, 0) skewX(-10deg);
+          transform: translate3d(0.2rem, 0, 0) skewX(-10deg);
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-welcome .welcome-content .welcome-statement .discover:hover {
+    -webkit-transform: translate3d(0rem, 0.6rem, 0) skewX(-10deg);
+            transform: translate3d(0rem, 0.6rem, 0) skewX(-10deg);
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-welcome .welcome-content .welcome-statement .discover {
+    -webkit-transform: translate3d(0rem, 0.6rem, 0);
+            transform: translate3d(0rem, 0.6rem, 0);
+  }
+}
+
+#home #home-welcome .welcome-content .welcome-statement.on span {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .boxed {
+    padding-left: 0;
+    padding-right: 0;
+  }
+}
+
+#home #home-work .project-container {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+@media only screen and (max-width: 768px) {
+  #home #home-work .project-container {
+    padding-top: 35px;
+    padding-bottom: 35px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+}
+
+#home #home-work .project-container .item {
+  max-width: 1140px;
+  width: 100%;
+  height: 85vh;
+  max-height: 640px;
+  margin: auto;
+  display: block;
+  position: relative;
+  -webkit-box-sizing: content-box;
+          box-sizing: content-box;
+  cursor: pointer;
+  /* Hover Status on Work Item */
+}
+
+@media only screen and (max-width: 1440px) {
+  #home #home-work .project-container .item {
+    height: 75vh;
+    max-width: 991px;
+    max-height: 650px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  #home #home-work .project-container .item {
+    max-height: 540px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #home #home-work .project-container .item {
+    height: 360px;
+    max-height: 100%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item {
+    width: 100%;
+    height: 320px;
+    padding-bottom: 0;
+    opacity: 0;
+    -webkit-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  }
+}
+
+#home #home-work .project-container .item:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  -webkit-transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+  transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item:after {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item.on {
+    opacity: 1;
+  }
+}
+
+#home #home-work .project-container .item.on:after {
+  width: 0;
+}
+
+#home #home-work .project-container .item.on h3 {
+  opacity: 1;
+}
+
+#home #home-work .project-container .item img {
+  position: relative;
+}
+
+#home #home-work .project-container .item img.img-1 {
+  display: none;
+}
+
+@media only screen and (max-width: 768px) {
+  #home #home-work .project-container .item img.img-1 {
+    width: 100%;
+    height: 100%;
+    display: block;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
+
+#home #home-work .project-container .item img.img-2 {
+  display: none;
+}
+
+#home #home-work .project-container .item .project-title {
+  position: absolute;
+  color: #ffffff;
+  bottom: 1.75rem;
+  left: 2rem;
+  opacity: 0;
+  text-transform: capitalize;
+  overflow: hidden;
+  text-shadow: 1px 1px 8px #a0a0a0;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+  -webkit-transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item .project-title {
+    display: none;
+  }
+}
+
+#home #home-work .project-container .item .project-title:after {
+  content: "_";
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 0px;
+  color: #ffffff;
+  -webkit-animation: fadeChevron 1s infinite;
+          animation: fadeChevron 1s infinite;
+}
+
+#home #home-work .project-container .item .project-desc {
+  position: absolute;
+  color: #010101;
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  min-width: 130px;
+  opacity: 0;
+  bottom: 0;
+  left: 2rem;
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item .project-desc {
+    opacity: 1;
+    color: #010101;
+    left: 1rem;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    font-size: 18px;
+    text-shadow: none;
+    overflow: visible;
+  }
+}
+
+#home #home-work .project-container .item .project-date {
+  position: absolute;
+  color: #010101;
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  opacity: 0;
+  bottom: 0;
+  right: -30px;
+  -webkit-writing-mode: tb-rl;
+          writing-mode: tb-rl;
+  -ms-writing-mode: tb-rl;
+  -webkit-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: -1;
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item .project-date {
+    font-size: 1rem;
+  }
+}
+
+#home #home-work .project-container .item .project-more {
+  position: absolute;
+  text-transform: lowercase;
+  color: #010101;
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  opacity: 0;
+  bottom: 0;
+  right: 2rem;
+  -webkit-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
+  z-index: -1;
+}
+
+#home #home-work .project-container .item .project-more:after {
+  content: ">";
+  display: inline-block;
+  vertical-align: middle;
+  height: 100%;
+  margin-left: 4px;
+  color: #010101;
+  -webkit-animation: fadeChevron 1s linear infinite;
+          animation: fadeChevron 1s linear infinite;
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item .project-more {
+    font-size: 16px;
+    right: 1rem;
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+    opacity: 1;
+  }
+  #home #home-work .project-container .item .project-more:after {
+    padding-top: 2px;
+  }
+}
+
+#home #home-work .project-container .item canvas {
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 768px) {
+  #home #home-work .project-container .item canvas {
+    display: none;
+  }
+}
+
+#home #home-work .project-container .item:hover {
+  padding-bottom: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item:hover {
+    padding-bottom: 0;
+  }
+}
+
+#home #home-work .project-container .item:hover h3 {
+  opacity: 0;
+  -webkit-transform: scale(0.6) translate3d(-4rem, 1em, 0);
+          transform: scale(0.6) translate3d(-4rem, 1em, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item:hover h3 {
+    display: none;
+  }
+}
+
+#home #home-work .project-container .item:hover .project-desc {
+  opacity: 1;
+  -webkit-transform: translate3d(-2rem, 20px, 0);
+          transform: translate3d(-2rem, 20px, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item:hover .project-desc {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+}
+
+#home #home-work .project-container .item:hover .project-date {
+  opacity: 1;
+  right: -30px;
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item:hover .project-date {
+    right: -20px;
+  }
+}
+
+#home #home-work .project-container .item:hover .project-more {
+  opacity: 1;
+  -webkit-transform: translate3d(2rem, 12px, 0);
+          transform: translate3d(2rem, 12px, 0);
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .item:hover .project-more {
+    -webkit-transform: translateY(30px);
+            transform: translateY(30px);
+  }
+}
+
+/*     
+    Name: _about.scss    
+    Author: Zakaria El Khachia
+    Client: Zakaria Elk
+*/
+#about {
+  width: 100%;
+  height: 90vh;
+  display: table;
+}
+
+@media only screen and (max-width: 768px) {
+  #about {
+    height: 80vh;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #about {
+    height: 100vh;
+  }
+}
+
+#about .about-container {
+  max-width: 966px;
+  padding: 0 70px;
+  display: table-cell;
+  vertical-align: middle;
+  margin: auto;
+  text-align: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #about .about-container {
+    padding: 0 40px;
+  }
+}
+
+#about .about-container .intro {
+  line-height: 1.5;
+  text-align: center;
+  display: inline-block;
+}
+
+@media only screen and (max-width: 600px) {
+  #about .about-container .intro {
+    text-align: left;
+    font-size: 21px;
+  }
+}
+
+#about .about-container .intro .mark {
+  -webkit-transition: all 0.5s ease 1s;
+  transition: all 0.5s ease 1s;
+}
+
+@media only screen and (max-width: 768px) {
+  #about .about-container .intro br {
+    display: none;
+  }
+}
+
+#about .about-container .contact-info {
+  display: block;
+  margin: auto;
+  text-align: center;
+  -webkit-transform: translateY(200px);
+          transform: translateY(200px);
+}
+
+@media only screen and (max-width: 600px) {
+  #about .about-container .contact-info {
+    -webkit-transform: translateY(70px);
+            transform: translateY(70px);
+  }
+}
+
+#about .about-container .contact-info .email {
+  text-decoration: underline;
+  -webkit-transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+  display: block;
+}
+
+#about .about-container .contact-info .email:hover {
+  -webkit-transform: skewX(-10deg);
+          transform: skewX(-10deg);
+}
+
+#about .about-container .contact-info .social {
+  margin-top: 2rem;
+}
+
+#about .about-container .contact-info .social a {
+  padding: 0 0.5rem;
+}
+
+#about .about-container .contact-info .social a:hover img {
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
+#about .about-container .contact-info .social a img {
+  width: 40px;
+  height: 40px;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#about.on .about-container .intro .mark {
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+/*     
+    Name: _about.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+#work {
+  /* 1. Project Hero */
+  /* 2. Project Intro / Info */
+  /* 3. Project Visuals */
+}
+
+#work #project-hero {
+  width: 100%;
+  height: 100vh;
+  padding-top: 10vh;
+  padding-bottom: 2vh;
+}
+
+@media only screen and (max-width: 768px) {
+  #work #project-hero {
+    padding-top: 14vh;
+    padding-bottom: 2vh;
+  }
+}
+
+#work .hero-content {
+  width: 100%;
+  height: 100%;
+}
+
+#work .hero-content .container-l {
+  width: 100%;
+  height: 100%;
+}
+
+@media only screen and (max-width: 768px) {
+  #work .hero-content .container-l {
+    -ms-flex-line-pack: center;
+        align-content: center;
+  }
+}
+
+#work .hero-content .banner-txt {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  opacity: 0;
+  -webkit-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+@media only screen and (max-width: 768px) {
+  #work .hero-content .banner-txt {
+    margin-bottom: 4rem;
+  }
+}
+
+#work .hero-content .banner-txt h1 {
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  line-height: 1.1;
+}
+
+#work .hero-content .banner-txt .desc {
+  width: 90%;
+  max-width: 400px;
+  line-height: 1.3;
+}
+
+@media only screen and (max-width: 600px) {
+  #work .hero-content .banner-txt .desc {
+    max-width: 100%;
+  }
+}
+
+#work .hero-content .banner-txt .discover {
+  position: relative;
+  font-family: "ceraRegular", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  text-decoration: underline;
+  display: block;
+  -webkit-transform: translateY(15px);
+          transform: translateY(15px);
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#work .hero-content .banner-txt .discover:hover {
+  -webkit-transform: translate3d(0.2rem, 15px, 0) skewX(-10deg);
+          transform: translate3d(0.2rem, 15px, 0) skewX(-10deg);
+}
+
+#work .hero-content .banner-txt .discover span {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+#work .hero-content .banner-txt.on {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+}
+
+#work .hero-content .banner-visual {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  width: auto;
+  position: relative;
+  overflow: hidden;
+}
+
+#work .hero-content .banner-visual:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  right: 0;
+  background-color: #ffffff;
+  -webkit-transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#work .hero-content .banner-visual.on:after {
+  width: 0;
+}
+
+@media only screen and (max-width: 768px) {
+  #work .hero-content .banner-visual {
+    height: auto;
+  }
+}
+
+#work .hero-content .banner-visual img {
+  width: 100%;
+  margin: auto;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+@media only screen and (max-width: 768px) {
+  #work .hero-content .banner-visual img {
+    height: auto;
+  }
+}
+
+#work #project-info {
+  padding: 180px 0;
+}
+
+@media only screen and (max-width: 768px) {
+  #work #project-info {
+    padding: 0px 0px 100px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #work #project-info {
+    padding: 60px 0px;
+  }
+}
+
+#work .info-content .info-title h2 {
+  text-transform: lowercase;
+  text-align: center;
+}
+
+@media only screen and (max-width: 768px) {
+  #work .info-content .info-title h2 {
+    text-align: left;
+    margin-bottom: 1.2rem;
+  }
+}
+
+#work .info-content .info-details {
+  max-width: 768px;
+}
+
+#work .info-content .info-details .info-intro {
+  margin-bottom: 100px;
+}
+
+@media only screen and (max-width: 768px) {
+  #work .info-content .info-details .info-intro {
+    margin-bottom: 60px;
+  }
+}
+
+#work .info-content .info-details .info-list-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+@media only screen and (max-width: 600px) {
+  #work .info-content .info-details .info-list-container {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #work .info-content .info-details .info-list-container .info-list {
+    margin-bottom: 1.5rem;
+  }
+}
+
+#work .info-content .info-details .info-list-container .info-list .list-title {
+  color: #666666;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+@media only screen and (max-width: 600px) {
+  #work .info-content .info-details .info-list-container .info-list .list-title {
+    margin-bottom: 0.2rem;
+  }
+}
+
+#work .info-content .info-details .info-list-container .info-list .list-details {
+  line-height: 1.6;
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  letter-spacing: 0px;
+  text-transform: lowercase;
+}
+
+@media only screen and (max-width: 600px) {
+  #work .info-content .info-details .info-list-container .info-list .list-details {
+    line-height: 1.4;
+  }
+}
+
+#work .info-content .info-details .info-list-container .info-list .list-details.site-link {
+  overflow: hidden;
+  position: relative;
+  display: inline-block;
+  color: #010101;
+  padding: 0rem 0.4rem;
+  margin-left: -0.4rem;
+  line-height: 1.3;
+  -webkit-transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+#work .info-content .info-details .info-list-container .info-list .list-details.site-link:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  -webkit-transform: translate3d(-110%, 0, 0);
+          transform: translate3d(-110%, 0, 0);
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  background-color: #010101;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+#work .info-content .info-details .info-list-container .info-list .list-details.site-link:after {
+  content: ">";
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 0px;
+  -webkit-animation: slideChevron 1.2s ease-out infinite;
+          animation: slideChevron 1.2s ease-out infinite;
+}
+
+#work .info-content .info-details .info-list-container .info-list .list-details.site-link:hover, #work .info-content .info-details .info-list-container .info-list .list-details.site-link:focus {
+  color: #ffffff;
+}
+
+#work .info-content .info-details .info-list-container .info-list .list-details.site-link:hover a, #work .info-content .info-details .info-list-container .info-list .list-details.site-link:focus a {
+  display: inline-block;
+  color: #ffffff;
+}
+
+#work .info-content .info-details .info-list-container .info-list .list-details.site-link:hover:before, #work .info-content .info-details .info-list-container .info-list .list-details.site-link:focus:before {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+
+#work .info-content .info-details .info-list-container .info-list .site-link-note {
+  font-size: 14px;
+  max-width: 200px;
+  margin-top: 0.8rem;
+  font-style: italic;
+  color: #666666;
+}
+
+@media only screen and (max-width: 600px) {
+  #work .info-content .info-details .info-list-container .info-list .site-link-note {
+    font-size: 12px;
+    margin-top: 0.2rem;
+  }
+}
+
+#work .visual-content .visual-figure {
+  background-color: #f9f9f9;
+  margin-bottom: 70px;
+  padding: 130px;
+}
+
+@media only screen and (max-width: 1440px) {
+  #work .visual-content .visual-figure {
+    padding: 70px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  #work .visual-content .visual-figure {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #work .visual-content .visual-figure {
+    margin-bottom: 4rem;
+  }
+}
+
+#work .visual-content .visual-figure img {
+  max-width: 1140px;
+  width: 100%;
+  height: auto;
+  margin: auto;
+  display: block;
+  padding: 0;
+  -webkit-box-shadow: 1px 1px 20px 6px #f3f3f3;
+          box-shadow: 1px 1px 20px 6px #f3f3f3;
+  opacity: 0;
+  -webkit-transition: all 0.4s ease 0.2s;
+  transition: all 0.4s ease 0.2s;
+}
+
+#work .visual-content .visual-figure img.on {
+  opacity: 1;
+}
+
+#work .next-post-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  padding: 4rem 0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+@media only screen and (max-width: 600px) {
+  #work .next-post-nav {
+    padding: 4rem 0;
+  }
+}
+
+#work .next-post-nav .next-link {
+  margin: 0rem;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  color: #010101 !important;
+}
+
+#work .next-post-nav .next-link:after {
+  content: ">";
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 0 1rem;
+}
+
+#work .next-post-nav .next-label {
+  position: relative;
+  overflow: hidden;
+  display: block;
+  text-transform: capitalize;
+  padding: 0rem 0.4rem;
+  line-height: 1.3;
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  -webkit-transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+
+#work .next-post-nav .next-label:before {
+  content: "";
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  -webkit-transform: translate3d(-110%, 0, 0);
+          transform: translate3d(-110%, 0, 0);
+  width: 100%;
+  z-index: -1;
+  height: 100%;
+  background-color: #010101;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+@media only screen and (max-width: 768px) {
+  #work .next-post-nav .next-label:before {
+    height: 2px;
+    top: 92%;
+  }
+}
+
+#work .next-post-nav:hover .next-label {
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 768px) {
+  #work .next-post-nav:hover .next-label {
+    color: #010101;
+  }
+}
+
+#work .next-post-nav:hover .next-label:before {
+  -webkit-transform: translate3d(0%, 0, 0);
+          transform: translate3d(0%, 0, 0);
+}
+
+/*     
+    Name: _404.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+.error-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.error-wrapper .error-txt {
+  max-width: 800px;
+  margin: auto;
+  display: block;
+  font-family: "ceraLight", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+}
+
+.error-wrapper .error-txt a {
+  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=main.css.map */

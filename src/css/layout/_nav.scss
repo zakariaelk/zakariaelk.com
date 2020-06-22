@@ -1,0 +1,84 @@
+/*     
+    Name: _nav.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+
+/* Nav Toggle */
+
+/* Nav Menu */
+
+.nav-wrapper {
+  @media #{$max-phone} {
+    right: 2rem;
+    transition: $t-all;
+    opacity: 0;
+    visibility: hidden;
+
+    &.scrolled {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  .nav-container {
+    .nav-menu {
+      a {
+        text-transform: lowercase;
+        position: relative;
+        font-family: $FontBold;
+        overflow: hidden;
+        display: inline-block;
+        vertical-align: middle;
+        padding: 0;
+        z-index: 30;
+        right: 15px;
+        transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+
+        @media #{$max-tablet} {
+          right: 0;
+        }
+
+        .chevron {
+          width: 22px;
+          height: 23px;
+          display: inline-block;
+          vertical-align: middle;
+          position: relative;
+          overflow: hidden;
+
+          .chevron-stroke {
+          }
+
+          .chevron-bg {
+            transform: translate3d(-100%, 0, 0);
+            transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+
+          .chevron-triangle {
+            transform: translate3d(-100%, 0, 0);
+            transition: all 0.2s cubic-bezier(0.215, 0.61, 0.355, 1);
+          }
+        }
+
+        &:hover {
+          transform: skewX(-10deg);
+
+          &:before {
+            transform: translate3d(0%, 0, 0);
+          }
+
+          .chevron {
+            .chevron-bg {
+              transform: translate3d(0%, 0, 0);
+            }
+
+            .chevron-triangle {
+              transform: translate3d(0%, 0, 0);
+            }
+          }
+        }
+      }
+    }
+  }
+}

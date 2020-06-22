@@ -1,0 +1,37 @@
+/*     
+    Name: _variables.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+
+/* Colors */
+
+$black: #010101;
+$white: #ffffff;
+$gray: #666666;
+
+/* Fonts */
+
+$FontZh: "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+$FontBold: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+$FontMedium: "ceraMedium", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+$FontRegular: "ceraRegular", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+$FontLight: "ceraLight", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
+
+/* Transforms */
+
+$t-all: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$t-left: left 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$t-transform: transform 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$t-width: width 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+$t-fill: fill 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+/* Breakpoints */
+
+$max-phone: "only screen and (max-width : 600px)";
+$max-tablet: "only screen and (max-width : 768px)";
+$max-laptop: "only screen and (max-width : 1440px)";
+
+$min-phone: "only screen and (min-width : 320px)";
+$min-tablet: "only screen and (min-width : 768px)";
+$min-laptop: "only screen and (min-width : 1440px)";

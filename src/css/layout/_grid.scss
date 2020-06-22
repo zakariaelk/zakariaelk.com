@@ -1,0 +1,87 @@
+/*     
+    Name: _grid.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+
+/* Grid System */
+
+$columns: 12;
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 1140px;
+}
+
+.container-l {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 auto;
+  max-width: 100%;
+}
+
+@for $width from 1 through $columns {
+  .col-#{$width} {
+    flex-basis: $width / $columns * 100%;
+  }
+
+  @media #{$max-tablet} {
+    .col-#{$width} {
+      flex-basis: 100%;
+    }
+  }
+}
+
+/* Isotop Masonry */
+
+/* Grid Item Sizer*/
+
+.grid-sizer,
+.grid-item {
+  width: 47%;
+}
+
+.gutter-sizer {
+  width: 6%;
+}
+
+/* Grid Item */
+.grid-item {
+  float: right;
+  margin-bottom: 5rem;
+}
+
+/* Floated Columns */
+
+.col-wrapper {
+  position: relative;
+}
+
+.col {
+  position: relative;
+  width: calc(100% * 1 / 2);
+
+  &:nth-child(2n + 1) {
+    clear: both;
+    float: left;
+  }
+
+  &:nth-child(2n + 2) {
+    clear: none;
+    float: right;
+  }
+}
+
+/* Col Padding */
+
+.left-t,
+.left-m {
+  padding-right: 5%;
+}
+
+.right-t,
+.right-m {
+  padding-left: 5%;
+}

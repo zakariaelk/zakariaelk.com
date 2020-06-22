@@ -1,0 +1,24 @@
+/*     
+    Name: _404.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+
+.error-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  .error-txt {
+    @extend .size-2;
+    max-width: 800px;
+    margin: auto;
+    display: block;
+    font-family: $FontLight;
+
+    a {
+      font-family: $FontBold;
+      text-decoration: underline;
+    }
+  }
+}

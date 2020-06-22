@@ -1,0 +1,172 @@
+/*     
+    Name: _animations.scss    
+    Author: Zakaria El Khachia
+    Client:
+*/
+
+/* Reveal Content */
+
+.reveal-x {
+  opacity: 0;
+  transform: translateX(-70px);
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s;
+  will-change: transform;
+}
+
+.reveal-y {
+  opacity: 0;
+  transform: translateY(100px);
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s;
+  will-change: transform;
+}
+
+.reveal-anim {
+  transition: 0.75s transform cubic-bezier(0.32, 1.01, 0.35, 1.01), 0.5s opacity 0.1s;
+}
+
+/* Reveal Text */
+// transition: <property> || <duration> || <timing-function> || <delay> [, ...];
+
+.reveal-text,
+.reveal-text::after {
+  animation-delay: var(--animation-delay, 2s);
+  animation-iteration-count: var(--iterations, 1);
+  animation-duration: var(--duration, 800ms);
+  animation-fill-mode: both;
+  animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.reveal-text {
+  --animation-delay: var(--delay, 0);
+  --animation-duration: var(--duration, 800ms);
+  --animation-iterations: var(--iterations, 1);
+  position: relative;
+  animation-name: clip-text;
+  white-space: nowrap;
+  opacity: 1 !important;
+
+  &::after {
+    content: "";
+    position: absolute;
+    z-index: 999;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    transform: scaleX(0);
+    transform-origin: 0 50%;
+    pointer-events: none;
+    animation-name: text-revealer;
+  }
+}
+
+@keyframes clip-text {
+  from {
+    clip-path: inset(0 100% 0 0);
+  }
+  to {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+@keyframes text-revealer {
+  0%,
+  50% {
+    transform-origin: 0 50%;
+  }
+
+  60%,
+  100% {
+    transform-origin: 100% 50%;
+  }
+
+  60% {
+    transform: scaleX(1);
+  }
+
+  100% {
+    transform: scaleX(0);
+  }
+}
+
+@keyframes slideLink {
+  0% {
+    opacity: 0;
+    left: -2rem;
+  }
+
+  20% {
+    opacity: 1;
+    left: 0rem;
+  }
+
+  80% {
+    opacity: 1;
+    left: 0rem;
+  }
+
+  100% {
+    left: 2rem;
+    opacity: 0;
+  }
+}
+
+@keyframes chevronBounce {
+  0% {
+    transform: translateY(0%);
+  }
+
+  50% {
+    transform: translateY(20%);
+  }
+
+  100% {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes spinLoader {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes fadeChevron {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes slideChevron {
+  0% {
+    transform: translate3d(-50%, 0, 0);
+    opacity: 0;
+  }
+
+  15% {
+    transform: translate3d(0%, 0, 0);
+    opacity: 1;
+  }
+
+  85% {
+    transform: translate3d(0%, 0, 0);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translate3d(50%, 0, 0);
+    opacity: 0;
+  }
+}

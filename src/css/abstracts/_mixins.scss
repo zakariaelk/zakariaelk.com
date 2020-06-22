@@ -1,0 +1,80 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+/* Mixins */
+
+// ==== Media Queries Breakpoints ==== //
+
+@mixin laptop {
+  @media (max-width: #{$laptop}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (max-width: #{$tablet}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media (max-width: #{$mobile}) {
+    @content;
+  }
+}
+
+// ===== Width & Height ===== //
+
+@mixin size($w, $h) {
+  @if ($w && $h) {
+    width: $w;
+    height: $h;
+  } @else if($w) {
+    width: $w;
+  } @else {
+    height: $h;
+  }
+}
+
+// ===== Fluid Typography ===== //
+
+// Constants
+
+$vp-large: 1600px;
+$vp-small: 320px;
+
+@mixin fluid-font-size($minFontSize, $maxFontSize, $minViewport: $vp-small, $maxViewport: $vp-large) {
+  $slope: ($minFontSize - $maxFontSize) / ($minViewport - $maxViewport);
+  $base: $maxFontSize - $slope * $maxViewport;
+
+  font-size: $minFontSize;
+
+  @media (min-width: $minViewport) {
+    font-size: calc(#{$base} + 100vw * #{$slope});
+  }
+
+  @media (min-width: $maxViewport) {
+    font-size: $maxFontSize;
+  }
+}
+
+// Vertical owl
+@mixin owl($margin-top) {
+  > * {
+    margin: 0;
+  }
+  > * + * {
+    margin-top: $margin-top + px;
+  }
+}
+
+// Horizontal owl
+@mixin howl($margin-left) {
+  > * {
+    margin: 0;
+  }
+  > * + * {
+    margin-left: $margin-left + px;
+  }
+}

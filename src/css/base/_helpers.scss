@@ -1,0 +1,107 @@
+/*     
+    Name: _helpers.scss    
+    Author: Zakaria El Khachia
+    Client: Zakaria Elk
+*/
+
+/**
+ * Clear inner floats
+ */
+// .clearfix::after {
+//   clear: both;
+//   content: "";
+//   display: table;
+// }
+
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+
+.clearfix {
+  display: inline-block;
+}
+
+html[xmlns] .clearfix {
+  display: block;
+}
+
+* html .clearfix {
+  height: 1%;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.fixed-center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.neg-z-index {
+  z-index: -1;
+}
+
+.pos-z-index {
+  z-index: 1;
+}
+
+.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.highlight {
+  font-family: $FontBold;
+}
+
+.zhFont {
+  font-family: $FontZh;
+}
+
+.full-background {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.highlight {
+  font-family: $FontBold;
+}
+
+.highlight-u {
+  font-family: $FontBold;
+  text-decoration: underline;
+}
+
+.d-table {
+  height: 100%;
+  display: table;
+}
+
+.v-middle {
+  display: table-cell;
+  vertical-align: middle;
+  height: 100%;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
