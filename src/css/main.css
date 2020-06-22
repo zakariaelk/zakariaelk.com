@@ -831,50 +831,50 @@ h3 {
   }
 }
 
-.size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
-  font-size: 28px;
+.size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+  font-size: 36px;
 }
 
 @media (min-width: 320px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
-    font-size: calc(26px + 100vw * 0.00625);
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: calc(33px + 100vw * 0.00937);
   }
 }
 
 @media (min-width: 1600px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
-    font-size: 36px;
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 48px;
   }
 }
 
-.size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+.size-4, #about .about-container .intro {
   font-size: 24px;
 }
 
 @media (min-width: 320px) {
-  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+  .size-4, #about .about-container .intro {
     font-size: calc(23px + 100vw * 0.00313);
   }
 }
 
 @media (min-width: 1600px) {
-  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+  .size-4, #about .about-container .intro {
     font-size: 28px;
   }
 }
 
-.size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+.size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .project-text .desc, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
   font-size: 18px;
 }
 
 @media (min-width: 320px) {
-  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .project-text .desc, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
     font-size: calc(17.25px + 100vw * 0.00234);
   }
 }
 
 @media (min-width: 1600px) {
-  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .project-text .desc, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
     font-size: 21px;
   }
 }
@@ -951,43 +951,43 @@ body, header .top-header .logo-link a .bottom-part, #work .next-post-nav .next-l
 }
 
 @media only screen and (max-width: 1440px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
-    font-size: 24px;
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 30px;
   }
 }
 
 @media only screen and (max-width: 1440px) and (min-width: 320px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
-    font-size: calc(22px + 100vw * 0.00625);
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: calc(27px + 100vw * 0.00937);
   }
 }
 
 @media only screen and (max-width: 1440px) and (min-width: 1600px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
-    font-size: 32px;
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 42px;
   }
 }
 
 @media only screen and (max-width: 1440px) {
-  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+  .size-4, #about .about-container .intro {
     font-size: 21px;
   }
 }
 
 @media only screen and (max-width: 1440px) and (min-width: 320px) {
-  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+  .size-4, #about .about-container .intro {
     font-size: calc(20.25px + 100vw * 0.00234);
   }
 }
 
 @media only screen and (max-width: 1440px) and (min-width: 1600px) {
-  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+  .size-4, #about .about-container .intro {
     font-size: 24px;
   }
 }
 
 @media only screen and (max-width: 1440px) {
-  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .project-text .desc, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
     font-size: 19px;
   }
   .size-6, html,
@@ -999,57 +999,57 @@ body, header .top-header .logo-link a .bottom-part, #work .next-post-nav .next-l
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
     font-size: 62px;
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 320px) {
+@media only screen and (max-width: 991px) and (min-width: 320px) {
   .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
     font-size: calc(57px + 100vw * 0.01562);
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 1600px) {
+@media only screen and (max-width: 991px) and (min-width: 1600px) {
   .size-1, #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
     font-size: 82px;
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
     font-size: 36px;
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 320px) {
+@media only screen and (max-width: 991px) and (min-width: 320px) {
   .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
     font-size: calc(31.5px + 100vw * 0.01406);
   }
 }
 
-@media only screen and (max-width: 768px) and (min-width: 1600px) {
+@media only screen and (max-width: 991px) and (min-width: 1600px) {
   .size-2, .headline, #home #home-welcome .welcome-content .welcome-statement div.static-welcome, #work .hero-content .banner-txt h1, .error-wrapper .error-txt {
     font-size: 54px;
   }
 }
 
-@media only screen and (max-width: 768px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
-    font-size: 20px;
-  }
-}
-
-@media only screen and (max-width: 768px) and (min-width: 320px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
-    font-size: calc(18.5px + 100vw * 0.00469);
-  }
-}
-
-@media only screen and (max-width: 768px) and (min-width: 1600px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+@media only screen and (max-width: 991px) {
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
     font-size: 26px;
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 320px) {
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: calc(23.5px + 100vw * 0.00781);
+  }
+}
+
+@media only screen and (max-width: 991px) and (min-width: 1600px) {
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+    font-size: 36px;
   }
 }
 
@@ -1090,13 +1090,13 @@ body, header .top-header .logo-link a .bottom-part, #work .next-post-nav .next-l
 }
 
 @media only screen and (max-width: 600px) {
-  .size-3, #home #home-work .project-container .item .project-title, #home #home-work .project-container .item .project-title:after, #work .info-content .info-title h2, #work .next-post-nav .next-label {
+  .size-3, #home #home-work .project-container .project-text .project-title, #work .info-content .info-title h2, #work .next-post-nav .next-label {
     font-size: 24px;
   }
-  .size-4, #home #home-work .project-container .item .project-desc, #about .about-container .intro {
+  .size-4, #about .about-container .intro {
     font-size: 21px;
   }
-  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .item .project-date, #home #home-work .project-container .item .project-more, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
+  .size-5, header .top-header .logo-link a .top-part, #home #home-work .project-container .project-text .desc, #about .about-container .contact-info .email, #work .hero-content .banner-txt .desc, #work .info-content .info-details .info-intro, #work .info-content .info-details .info-list-container .info-list .list-details {
     font-size: 16px;
   }
   .size-6, html,
@@ -1361,7 +1361,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
   transition: all 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .nav-wrapper .nav-container .nav-menu a {
     right: 0;
   }
@@ -1434,7 +1434,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
   padding-right: 3rem;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .boxed {
     padding-left: 3rem;
     padding-right: 3rem;
@@ -1508,7 +1508,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 8.33333%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-1 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1520,7 +1520,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 16.66667%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-2 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1532,7 +1532,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 25%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-3 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1544,7 +1544,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 33.33333%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-4 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1556,7 +1556,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 41.66667%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-5 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1568,7 +1568,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 50%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-6 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1580,7 +1580,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 58.33333%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-7 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1592,7 +1592,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 66.66667%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-8 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1604,7 +1604,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 75%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-9 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1616,7 +1616,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 83.33333%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-10 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1628,7 +1628,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 91.66667%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-11 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1640,7 +1640,7 @@ header .top-header .logo-link a .bottom-part.scrolled:after {
       flex-basis: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   .col-12 {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%;
@@ -1769,7 +1769,7 @@ svg,
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #home .side-visual {
     top: 90%;
     width: 560px;
@@ -1837,7 +1837,7 @@ svg,
           transform: translate3d(0, -50%, 0);
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #home #home-welcome .welcome-content .welcome-statement {
     top: 50%;
   }
@@ -1872,11 +1872,6 @@ svg,
   #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
     height: auto;
     overflow: visible;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #home #home-welcome .welcome-content .welcome-statement div.dynamic-welcome {
     margin-bottom: 0;
   }
 }
@@ -1971,6 +1966,10 @@ svg,
           transform: translate3d(0, 0, 0);
 }
 
+#home #home-work {
+  /* Project Container */
+}
+
 @media only screen and (max-width: 600px) {
   #home #home-work .boxed {
     padding-left: 0;
@@ -1979,29 +1978,71 @@ svg,
 }
 
 #home #home-work .project-container {
-  padding-top: 120px;
-  padding-bottom: 120px;
+  width: 100%;
+  max-width: 1280px;
+  margin: 200px auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  /* Project Visual */
+  /* Project Text */
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #home #home-work .project-container {
-    padding-top: 35px;
-    padding-bottom: 35px;
+    margin: 100px auto;
   }
 }
 
 @media only screen and (max-width: 600px) {
   #home #home-work .project-container {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    margin: 40px auto;
   }
 }
 
-#home #home-work .project-container .item {
-  max-width: 1140px;
-  width: 100%;
-  height: 85vh;
-  max-height: 640px;
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container {
+    display: block;
+  }
+}
+
+#home #home-work .project-container:first-child {
+  padding-top: 140px;
+}
+
+#home #home-work .project-container.inverted {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container.inverted {
+    -webkit-box-orient: unset;
+    -webkit-box-direction: unset;
+        -ms-flex-direction: unset;
+            flex-direction: unset;
+  }
+}
+
+#home #home-work .project-container:hover .project-text .project-action, #home #home-work .project-container:focus .project-text .project-action {
+  padding-right: 2rem;
+}
+
+#home #home-work .project-container:hover .project-text .project-action:after, #home #home-work .project-container:focus .project-text .project-action:after {
+  visibility: visible;
+  -webkit-animation: slideChevron 1.2s ease-out infinite;
+          animation: slideChevron 1.2s ease-out infinite;
+  display: inline-block;
+}
+
+#home #home-work .project-container .project-visual {
+  width: 60%;
+  height: 100%;
   margin: auto;
   display: block;
   position: relative;
@@ -2011,80 +2052,65 @@ svg,
   /* Hover Status on Work Item */
 }
 
-@media only screen and (max-width: 1440px) {
-  #home #home-work .project-container .item {
-    height: 75vh;
-    max-width: 991px;
-    max-height: 650px;
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  #home #home-work .project-container .item {
-    max-height: 540px;
-  }
-}
-
-@media only screen and (max-width: 768px) {
-  #home #home-work .project-container .item {
-    height: 360px;
-    max-height: 100%;
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container .project-visual {
+    width: 100%;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item {
-    width: 100%;
-    height: 320px;
+  #home #home-work .project-container .project-visual {
     padding-bottom: 0;
-    opacity: 0;
     -webkit-transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
     transition: all 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
 }
 
-#home #home-work .project-container .item:after {
+#home #home-work .project-container .project-visual a {
+  width: 100%;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#home #home-work .project-container .project-visual a:after {
   content: "";
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   right: 0;
+  z-index: 1;
   background-color: #ffffff;
   -webkit-transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
   transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
 }
 
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item:after {
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container .project-visual a:after {
     display: none;
   }
 }
 
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item.on {
-    opacity: 1;
-  }
-}
-
-#home #home-work .project-container .item.on:after {
+#home #home-work .project-container .project-visual a.on:after {
   width: 0;
 }
 
-#home #home-work .project-container .item.on h3 {
+#home #home-work .project-container .project-visual a.on h3 {
   opacity: 1;
 }
 
-#home #home-work .project-container .item img {
+#home #home-work .project-container .project-visual img {
   position: relative;
 }
 
-#home #home-work .project-container .item img.img-1 {
+#home #home-work .project-container .project-visual img.img-1 {
   display: none;
 }
 
-@media only screen and (max-width: 768px) {
-  #home #home-work .project-container .item img.img-1 {
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container .project-visual img.img-1 {
     width: 100%;
     height: 100%;
     display: block;
@@ -2093,194 +2119,105 @@ svg,
   }
 }
 
-#home #home-work .project-container .item img.img-2 {
-  display: none;
+#home #home-work .project-container .project-visual img.img-2 {
+  opacity: 0;
+  visibility: 0;
 }
 
-#home #home-work .project-container .item .project-title {
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container .project-visual img.img-2 {
+    display: none;
+  }
+}
+
+#home #home-work .project-container .project-visual canvas {
+  padding-bottom: 30px;
   position: absolute;
-  color: #ffffff;
+  top: 0;
+  left: 0;
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container .project-visual canvas {
+    display: none;
+  }
+}
+
+#home #home-work .project-container .project-text {
+  width: 40%;
+  padding-left: 3rem;
+  opacity: 0;
+  -webkit-transform: translate3d(0, 30px, 0);
+          transform: translate3d(0, 30px, 0);
+  -webkit-transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
+  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
+}
+
+#home #home-work .project-container .project-text.on {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0px, 0);
+          transform: translate3d(0, 0px, 0);
+}
+
+@media only screen and (max-width: 1440px) {
+  #home #home-work .project-container .project-text {
+    padding-left: 2.5rem;
+  }
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container .project-text {
+    width: 100%;
+    padding: 1rem 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .project-text {
+    padding: 1.3rem 1rem;
+  }
+}
+
+#home #home-work .project-container .project-text .project-title {
+  color: #010101;
   bottom: 1.75rem;
   left: 2rem;
-  opacity: 0;
   text-transform: capitalize;
-  overflow: hidden;
-  text-shadow: 1px 1px 8px #a0a0a0;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
-  -webkit-transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  cursor: pointer;
 }
 
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item .project-title {
-    display: none;
+#home #home-work .project-container .project-text .desc {
+  max-width: 360px;
+  margin: 1rem 0 1.5rem;
+}
+
+@media only screen and (max-width: 991px) {
+  #home #home-work .project-container .project-text .desc {
+    max-width: 60%;
+    margin: 0.5rem 0 1.5rem;
   }
 }
 
-#home #home-work .project-container .item .project-title:after {
-  content: "_";
-  display: inline-block;
-  vertical-align: top;
-  margin-left: 0px;
+@media only screen and (max-width: 600px) {
+  #home #home-work .project-container .project-text .desc {
+    max-width: 100%;
+  }
+}
+
+#home #home-work .project-container .project-text .project-action {
+  padding: 0.4rem 1rem;
+  background: #010101;
   color: #ffffff;
-  -webkit-animation: fadeChevron 1s infinite;
-          animation: fadeChevron 1s infinite;
+  -webkit-transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
-#home #home-work .project-container .item .project-desc {
-  position: absolute;
-  color: #010101;
-  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  min-width: 130px;
-  opacity: 0;
-  bottom: 0;
-  left: 2rem;
-  -webkit-transform-origin: center;
-          transform-origin: center;
-  -webkit-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  z-index: -1;
-}
-
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item .project-desc {
-    opacity: 1;
-    color: #010101;
-    left: 1rem;
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-    font-size: 18px;
-    text-shadow: none;
-    overflow: visible;
-  }
-}
-
-#home #home-work .project-container .item .project-date {
-  position: absolute;
-  color: #010101;
-  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  opacity: 0;
-  bottom: 0;
-  right: -30px;
-  -webkit-writing-mode: tb-rl;
-          writing-mode: tb-rl;
-  -ms-writing-mode: tb-rl;
-  -webkit-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  z-index: -1;
-}
-
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item .project-date {
-    font-size: 1rem;
-  }
-}
-
-#home #home-work .project-container .item .project-more {
-  position: absolute;
-  text-transform: lowercase;
-  color: #010101;
-  font-family: "ceraBold", Arial, "Hiragino Sans GB", "Microsoft YaHei", "WenQuanYi Micro Hei", sans-serif;
-  opacity: 0;
-  bottom: 0;
-  right: 2rem;
-  -webkit-transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-  z-index: -1;
-}
-
-#home #home-work .project-container .item .project-more:after {
+#home #home-work .project-container .project-text .project-action:after {
   content: ">";
-  display: inline-block;
+  position: absolute;
+  visibility: hidden;
   vertical-align: middle;
-  height: 100%;
-  margin-left: 4px;
-  color: #010101;
-  -webkit-animation: fadeChevron 1s linear infinite;
-          animation: fadeChevron 1s linear infinite;
-}
-
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item .project-more {
-    font-size: 16px;
-    right: 1rem;
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-    opacity: 1;
-  }
-  #home #home-work .project-container .item .project-more:after {
-    padding-top: 2px;
-  }
-}
-
-#home #home-work .project-container .item canvas {
-  padding-bottom: 30px;
-}
-
-@media only screen and (max-width: 768px) {
-  #home #home-work .project-container .item canvas {
-    display: none;
-  }
-}
-
-#home #home-work .project-container .item:hover {
-  padding-bottom: 30px;
-}
-
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item:hover {
-    padding-bottom: 0;
-  }
-}
-
-#home #home-work .project-container .item:hover h3 {
-  opacity: 0;
-  -webkit-transform: scale(0.6) translate3d(-4rem, 1em, 0);
-          transform: scale(0.6) translate3d(-4rem, 1em, 0);
-}
-
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item:hover h3 {
-    display: none;
-  }
-}
-
-#home #home-work .project-container .item:hover .project-desc {
-  opacity: 1;
-  -webkit-transform: translate3d(-2rem, 20px, 0);
-          transform: translate3d(-2rem, 20px, 0);
-}
-
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item:hover .project-desc {
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-  }
-}
-
-#home #home-work .project-container .item:hover .project-date {
-  opacity: 1;
-  right: -30px;
-}
-
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item:hover .project-date {
-    right: -20px;
-  }
-}
-
-#home #home-work .project-container .item:hover .project-more {
-  opacity: 1;
-  -webkit-transform: translate3d(2rem, 12px, 0);
-          transform: translate3d(2rem, 12px, 0);
-}
-
-@media only screen and (max-width: 600px) {
-  #home #home-work .project-container .item:hover .project-more {
-    -webkit-transform: translateY(30px);
-            transform: translateY(30px);
-  }
+  margin-left: 0.6rem;
 }
 
 /*     
@@ -2294,7 +2231,7 @@ svg,
   display: table;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #about {
     height: 80vh;
   }
@@ -2339,7 +2276,7 @@ svg,
   transition: all 0.5s ease 1s;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #about .about-container .intro br {
     display: none;
   }
@@ -2414,7 +2351,7 @@ svg,
   padding-bottom: 2vh;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work #project-hero {
     padding-top: 14vh;
     padding-bottom: 2vh;
@@ -2431,7 +2368,7 @@ svg,
   height: 100%;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .hero-content .container-l {
     -ms-flex-line-pack: center;
         align-content: center;
@@ -2447,7 +2384,7 @@ svg,
   transition: all 0.3s ease-in;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .hero-content .banner-txt {
     margin-bottom: 4rem;
   }
@@ -2523,7 +2460,7 @@ svg,
   width: 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .hero-content .banner-visual {
     height: auto;
   }
@@ -2536,7 +2473,7 @@ svg,
      object-fit: cover;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .hero-content .banner-visual img {
     height: auto;
   }
@@ -2546,7 +2483,7 @@ svg,
   padding: 180px 0;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work #project-info {
     padding: 0px 0px 100px;
   }
@@ -2563,7 +2500,7 @@ svg,
   text-align: center;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .info-content .info-title h2 {
     text-align: left;
     margin-bottom: 1.2rem;
@@ -2578,7 +2515,7 @@ svg,
   margin-bottom: 100px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .info-content .info-details .info-intro {
     margin-bottom: 60px;
   }
@@ -2714,7 +2651,7 @@ svg,
   }
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .visual-content .visual-figure {
     padding: 0;
   }
@@ -2803,7 +2740,7 @@ svg,
   transition: all 0.3s ease;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .next-post-nav .next-label:before {
     height: 2px;
     top: 92%;
@@ -2814,7 +2751,7 @@ svg,
   color: #ffffff;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 991px) {
   #work .next-post-nav:hover .next-label {
     color: #010101;
   }

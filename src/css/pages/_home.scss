@@ -101,14 +101,12 @@
               height: 100px;
             }
 
-            @media only screen and (max-width: 991px) {
+            @media #{$max-tablet} {
               height: auto;
               overflow: visible;
-            }
-
-            @media #{$max-tablet} {
               margin-bottom: 0;
             }
+
             @media #{$max-phone} {
               font-size: 36px;
               margin-bottom: 0;
@@ -127,7 +125,7 @@
               height: 70px;
             }
 
-            @media only screen and (max-width: 991px) {
+            @media #{$max-tablet} {
               height: auto;
               overflow: visible;
             }
@@ -147,7 +145,7 @@
             transform: translate3d(0, 100px, 0);
             transition: all 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
 
-            @media only screen and (max-width: 991px) {
+            @media #{$max-tablet} {
               position: relative;
             }
           }
@@ -165,12 +163,12 @@
           &:hover {
             transform: translate3d(0.2rem, 0, 0) skewX(-10deg);
 
-            @media only screen and (max-width: 991px) {
+            @media #{$max-tablet} {
               transform: translate3d(0rem, 0.6rem, 0) skewX(-10deg);
             }
           }
 
-          @media only screen and (max-width: 991px) {
+          @media #{$max-tablet} {
             transform: translate3d(0rem, 0.6rem, 0);
           }
         }
@@ -192,79 +190,100 @@
         padding-right: 0;
       }
     }
+
+    /* Project Container */
     .project-container {
-      padding-top: 120px;
-      padding-bottom: 120px;
+      width: 100%;
+      max-width: 1280px;
+      margin: 200px auto;
+      display: flex;
+      align-items: center;
 
       @media #{$max-tablet} {
-        padding-top: 35px;
-        padding-bottom: 35px;
+        margin: 100px auto;
       }
 
       @media #{$max-phone} {
-        padding-top: 3rem;
-        padding-bottom: 3rem;
+        margin: 40px auto;
       }
 
-      .item {
-        max-width: 1140px;
-        width: 100%;
-        height: 85vh;
-        max-height: 640px;
+      @media #{$max-tablet} {
+        display: block;
+      }
+
+      &:first-child {
+        padding-top: 140px;
+      }
+
+      &.inverted {
+        flex-direction: row-reverse;
+
+        @media #{$max-tablet} {
+          flex-direction: unset;
+        }
+      }
+
+      &:hover,
+      &:focus {
+        .project-text {
+          .project-action {
+            padding-right: 2rem;
+            &:after {
+              visibility: visible;
+              animation: slideChevron 1.2s ease-out infinite;
+              display: inline-block;
+            }
+          }
+        }
+      }
+
+      /* Project Visual */
+      .project-visual {
+        width: 60%;
+        height: 100%;
         margin: auto;
         display: block;
         position: relative;
         box-sizing: content-box;
         cursor: pointer;
 
-        @media #{$max-laptop} {
-          height: 75vh;
-          max-width: 991px;
-          max-height: 650px;
-        }
-
-        @media only screen and (max-width: 1200px) {
-          max-height: 540px;
-        }
-
         @media #{$max-tablet} {
-          height: 360px;
-          max-height: 100%;
+          width: 100%;
         }
 
         @media #{$max-phone} {
-          width: 100%;
-          height: 320px;
           padding-bottom: 0;
-          opacity: 0;
           transition: $t-all;
         }
 
-        &:after {
-          content: "";
-          position: absolute;
-          width: 100%;
-          height: 100%;
-          top: 0;
-          right: 0;
-          background-color: $white;
-          transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+        a {
+          @include size(100%, 100%);
+          display: flex;
 
-          @media #{$max-phone} {
-            display: none;
-          }
-        }
-
-        &.on {
-          @media #{$max-phone} {
-            opacity: 1;
-          }
           &:after {
-            width: 0;
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            right: 0;
+            z-index: 1;
+            background-color: $white;
+            transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+            @media #{$max-tablet} {
+              display: none;
+            }
           }
 
-          h3 {
-            opacity: 1;
+          &.on {
+            &:after {
+              width: 0;
+            }
+
+            h3 {
+              opacity: 1;
+            }
           }
         }
 
@@ -281,122 +300,19 @@
           }
 
           &.img-2 {
-            display: none;
-
-            // @media #{$max-tablet} {
-            //   @include size(100%, 100%);
-            //   display: block;
-            //   object-fit: cover;
-            // }
-          }
-        }
-
-        .project-title {
-          @extend .size-3;
-          position: absolute;
-          color: $white;
-          bottom: 1.75rem;
-          left: 2rem;
-          opacity: 0;
-          text-transform: capitalize;
-          overflow: hidden;
-          text-shadow: 1px 1px 8px #a0a0a0;
-          transform: translate3d(0, 0, 0);
-          transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
-
-          @media #{$max-phone} {
-            display: none;
-          }
-
-          &:after {
-            content: "_";
-            @extend .size-3;
-            display: inline-block;
-            vertical-align: top;
-            margin-left: 0px;
-            color: $white;
-            animation: fadeChevron 1s infinite;
-          }
-        }
-
-        .project-desc {
-          @extend .size-4;
-          position: absolute;
-          color: $black;
-          font-family: $FontBold;
-          min-width: 130px;
-          opacity: 0;
-          bottom: 0;
-          left: 2rem;
-          transform-origin: center;
-          transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-          z-index: -1;
-
-          @media #{$max-phone} {
-            opacity: 1;
-            color: $black;
-            left: 1rem;
-            transform: translateY(30px);
-            font-size: 18px;
-            text-shadow: none;
-            overflow: visible;
-          }
-        }
-
-        .project-date {
-          @extend .size-5;
-          position: absolute;
-          color: $black;
-          font-family: $FontBold;
-          opacity: 0;
-          bottom: 0;
-          right: -30px;
-          writing-mode: tb-rl;
-          -ms-writing-mode: tb-rl;
-          transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-          z-index: -1;
-
-          @media #{$max-phone} {
-            font-size: 1rem;
-          }
-        }
-
-        .project-more {
-          @extend .size-5;
-          position: absolute;
-          text-transform: lowercase;
-          color: $black;
-          font-family: $FontBold;
-          opacity: 0;
-          bottom: 0;
-          right: 2rem;
-          transition: 0.5s cubic-bezier(0.215, 0.61, 0.355, 1);
-          z-index: -1;
-
-          &:after {
-            content: ">";
-            display: inline-block;
-            vertical-align: middle;
-            height: 100%;
-            margin-left: 4px;
-            color: $black;
-            animation: fadeChevron 1s linear infinite;
-          }
-
-          @media #{$max-phone} {
-            font-size: 16px;
-            right: 1rem;
-            transform: translateY(30px);
-            opacity: 1;
-
-            &:after {
-              padding-top: 2px;
+            opacity: 0;
+            visibility: 0;
+            @media #{$max-tablet} {
+              display: none;
             }
           }
         }
 
         canvas {
           padding-bottom: 30px;
+          position: absolute;
+          top: 0;
+          left: 0;
 
           @media #{$max-tablet} {
             display: none;
@@ -406,49 +322,73 @@
         /* Hover Status on Work Item */
 
         &:hover {
-          padding-bottom: 30px;
+          canvas {
+          }
+        }
+      }
+
+      /* Project Text */
+
+      .project-text {
+        width: 40%;
+        padding-left: 3rem;
+        opacity: 0;
+        transform: translate3d(0, 30px, 0);
+        transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
+
+        &.on {
+          opacity: 1;
+          transform: translate3d(0, 0px, 0);
+        }
+
+        @media #{$max-laptop} {
+          padding-left: 2.5rem;
+        }
+
+        @media #{$max-tablet} {
+          width: 100%;
+          padding: 1rem 0;
+        }
+
+        @media #{$max-phone} {
+          padding: 1.3rem 1rem;
+        }
+
+        .project-title {
+          @extend .size-3;
+          color: $black;
+          bottom: 1.75rem;
+          left: 2rem;
+          text-transform: capitalize;
+          cursor: pointer;
+        }
+
+        .desc {
+          @extend .size-5;
+          max-width: 360px;
+          margin: 1rem 0 1.5rem;
+
+          @media #{$max-tablet} {
+            max-width: 60%;
+            margin: 0.5rem 0 1.5rem;
+          }
 
           @media #{$max-phone} {
-            padding-bottom: 0;
+            max-width: 100%;
           }
+        }
+        .project-action {
+          padding: 0.4rem 1rem;
+          background: $black;
+          color: $white;
+          transition: all 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-          h3 {
-            opacity: 0;
-            transform: scale(0.6) translate3d(-4rem, 1em, 0);
-
-            @media #{$max-phone} {
-              display: none;
-            }
-          }
-
-          .project-desc {
-            opacity: 1;
-            transform: translate3d(-2rem, 20px, 0);
-
-            @media #{$max-phone} {
-              transform: translateY(30px);
-            }
-          }
-
-          .project-date {
-            opacity: 1;
-            right: -30px;
-
-            @media #{$max-phone} {
-              right: -20px;
-            }
-          }
-
-          .project-more {
-            opacity: 1;
-            transform: translate3d(2rem, 12px, 0);
-
-            @media #{$max-phone} {
-              transform: translateY(30px);
-            }
-          }
-
-          canvas {
+          &:after {
+            content: ">";
+            position: absolute;
+            visibility: hidden;
+            vertical-align: middle;
+            margin-left: 0.6rem;
           }
         }
       }

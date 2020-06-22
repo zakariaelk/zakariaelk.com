@@ -1,11 +1,11 @@
 // ("use strict");
 
-import $ from "jquery";
-import anime from "animejs/lib/anime.es.js";
-import { gsap } from "gsap";
-import * as THREE from "three";
-import hoverEffect from "hover-effect";
-import "./vendors/jquery.ripples-min.js";
+// import $ from "jquery";
+// import anime from "animejs/lib/anime.es.js";
+// import { gsap } from "gsap";
+// import * as THREE from "three";
+// import hoverEffect from "hover-effect";
+// import "./vendors/jquery.ripples-min.js";
 // import "./vendor.js";
 
 /*-----------------------------------------------------------------------------------*/
@@ -36,6 +36,40 @@ if (grid) {
 function inViewPort(elem) {
   var elemPos = elem.getBoundingClientRect();
   return !(elemPos.top > 900);
+}
+
+/*-----------------------------------------------------------------------------------*/
+/*  Image Preload
+/*-----------------------------------------------------------------------------------*/
+
+function preloadimages(arr) {
+  let newimages = [];
+  let loadedimages = 0;
+  let postaction = function () { }
+  arr = (typeof arr != "object") ? [arr] : arr
+
+  function imageloadpost() {
+    loadedimages++
+    if (loadedimages == arr.length) {
+      postaction(newimages)
+    }
+  }
+
+  for (var i = 0; i < arr.length; i++) {
+    newimages[i] = new Image()
+    newimages[i].src = arr[i].src
+    newimages[i].onload = function () {
+      imageloadpost()
+    }
+    newimages[i].onerror = function () {
+      imageloadpost()
+    }
+  }
+  return { //return blank object with done() method
+    done: function (f) {
+      postaction = f || postaction //remember user defined callback functions to be called when images load
+    }
+  }
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -74,7 +108,9 @@ function revealVer(elem) {
 /*  Reveal Work & Visual Item
 /*-----------------------------------------------------------------------------------*/
 
-const workItem = document.querySelectorAll(".project-container .item");
+const workItem = document.querySelectorAll(".project-container");
+const workVisual = document.querySelectorAll(".project-visual a");
+const workText = document.querySelectorAll(".project-text");
 const visualItem = document.querySelectorAll(".visual-figure img");
 
 function revealWork(itemReveal) {
@@ -137,12 +173,6 @@ function anchorLinkHandler(e) {
 
   const checkIfDone = setInterval(function () {
     const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
-    // if (distanceToTop(targetAnchor) === 0 || atBottom) {
-    //   targetAnchor.tabIndex = "-1";
-    //   targetAnchor.focus();
-    //   // window.history.pushState("", "", targetID);
-    //   clearInterval(checkIfDone);
-    // }
   }, 2000);
 }
 
@@ -191,19 +221,36 @@ if (rippleObj) {
 /*  Liquid Onhover Transition
 /*-----------------------------------------------------------------------------------*/
 
-[].forEach.call(workItem, function (item) {
-  const img1 = item.querySelector(".img-1").src;
-  const img2 = item.querySelector(".img-2").src;
+const workImg = Array.from(document.querySelectorAll('.project-visual img'));
 
-  const myAnimation = new hoverEffect({
-    parent: item,
-    intensity: 0.3,
-    image1: img1,
-    image2: img2,
-    displacementImage: window.location.href + "wp-content/themes/zakariaelk/src/img/png/heightMap.png",
-    imagesRatio: 640 / 1140,
+
+preloadimages(workImg).done(function () {
+
+  [].forEach.call(workItem, function (item) {
+    const imgWrapper = item.querySelector('.project-visual');
+    const img1 = item.querySelector(".img-1").src;
+    const img2 = item.querySelector(".img-2").src;
+
+
+    const myAnimation = new hoverEffect({
+      parent: imgWrapper,
+      intensity: 0.2,
+      speedIn: 1.8,
+      speedOut: 1.6,
+      image1: img1,
+      image2: img2,
+      displacementImage: window.location.href + "wp-content/themes/zakariaelk/src/img/png/heightMap.png",
+      imagesRatio: 640 / 1140,
+    });
+
+    item.addEventListener('mouseover', myAnimation.next);
+    item.addEventListener('mouseout', myAnimation.previous);
   });
-});
+
+})
+
+
+
 
 /*-----------------------------------------------------------------------------------*/
 /*  Animation Timeline
@@ -340,7 +387,8 @@ console.log(time);
 
 window.addEventListener("scroll", function () {
   requestAnimationFrame(updateOnScroll);
-  revealWork(workItem);
+  revealWork(workVisual);
+  revealWork(workText);
   revealWork(visualItem);
   revealAbout();
 });
@@ -357,7 +405,8 @@ function init() {
   } else {
     defaultAnim();
   }
-  revealWork(workItem);
+  revealWork(workVisual);
+  revealWork(workText);
   revealWork(visualItem);
   revealAbout();
 
