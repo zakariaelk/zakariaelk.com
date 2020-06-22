@@ -1,12 +1,12 @@
 // ("use strict");
 
-// import $ from "jquery";
-// import anime from "animejs/lib/anime.es.js";
-// import { gsap } from "gsap";
-// import * as THREE from "three";
-// import hoverEffect from "hover-effect";
-// import "./vendors/jquery.ripples-min.js";
-// import "./vendor.js";
+import $ from "jquery";
+import anime from "animejs/lib/anime.es.js";
+import { gsap } from "gsap";
+import * as THREE from "three";
+import hoverEffect from "hover-effect";
+import "./vendors/jquery.ripples-min.js";
+import "./vendor.js";
 
 /*-----------------------------------------------------------------------------------*/
 /*  Masonry Grid Init
@@ -227,7 +227,7 @@ const workImg = Array.from(document.querySelectorAll('.project-visual img'));
 preloadimages(workImg).done(function () {
 
   [].forEach.call(workItem, function (item) {
-    const imgWrapper = item.querySelector('.project-visual');
+    const imgWrapper = item.querySelector('.project-visual a');
     const img1 = item.querySelector(".img-1").src;
     const img2 = item.querySelector(".img-2").src;
 

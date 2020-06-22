@@ -233,18 +233,18 @@ class My_Recent_Posts_Widget extends WP_Widget_Recent_Posts
 
             echo $before_widget;?>
 
-	            <?php if ($title) {
+		            <?php if ($title) {
                 echo $before_title . $title . $after_title;
             }
             ?>
 
-	                <ul class="sidebar-separate-list">
-	                    <?php while ($r->have_posts()): $r->the_post();?>
-		                    <li><span class="sidebar-post-date"><?php the_time('Y-m-d');?></span> <br /> <a class="gray" href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a ></li>
-		                    <?php endwhile;?>
-	                </ul>
+		                <ul class="sidebar-separate-list">
+		                    <?php while ($r->have_posts()): $r->the_post();?>
+				                    <li><span class="sidebar-post-date"><?php the_time('Y-m-d');?></span> <br /> <a class="gray" href="<?php the_permalink();?>" title="<?php the_title();?>"><?php the_title();?></a ></li>
+				                    <?php endwhile;?>
+		                </ul>
 
-	            <?php
+		            <?php
     echo $after_widget;
 
             wp_reset_postdata();
