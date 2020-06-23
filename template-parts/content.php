@@ -24,9 +24,11 @@ if ($_SESSION['postCount'] % 2 == 0) {$postDirection = "inverted";}
     </figure>
 
     <div class='project-text'>
-        <h3 class='project-title'><?php the_title();?></h3>
+        <h3 class='project-title'><a href='<?php the_permalink();?>'><?php the_title();?></a></h3>        
+        <div class="project-tags"><?php the_tags('#', ', #', '');?></div>
         <p class="desc"><?php the_field("project_intro");?></p>
         <a class='project-action' href='<?php the_permalink();?>'>learn more</a>
+        
     </div>
 </div>
 

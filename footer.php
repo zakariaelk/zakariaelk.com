@@ -5,7 +5,7 @@
                 <div class="about-container">
                     <p class="intro">
                         I love to <span class="mark"> express new ideas </span> through design and code.<br />
-                         When I am not working, i enjoy <span class="mark">running and playing the guitar</span> 🎸
+                         When I am not working, I enjoy <span class="mark">running and playing the guitar</span> 🎸
                     </p>
 
 
@@ -29,9 +29,9 @@
         </footer>
     </div>
 
-<!-- FOOTER End -->    
-    
-<?php wp_footer(); ?>
+<!-- FOOTER End -->
+
+<?php wp_footer();?>
 
 </body>
 

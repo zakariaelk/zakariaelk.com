@@ -1,11 +1,11 @@
 // ("use strict");
 
-import $ from "jquery";
-import anime from "animejs/lib/anime.es.js";
-import { gsap } from "gsap";
-import * as THREE from "three";
-import hoverEffect from "hover-effect";
-import "./vendors/jquery.ripples-min.js";
+// import $ from "jquery";
+// import anime from "animejs/lib/anime.es.js";
+// import { gsap } from "gsap";
+// import * as THREE from "three";
+// import hoverEffect from "hover-effect";
+// import "./vendors/jquery.ripples-min.js";
 
 /*-----------------------------------------------------------------------------------*/
 /*  Masonry Grid Init
@@ -143,6 +143,7 @@ const navWrapper = document.querySelector(".nav-wrapper");
 const body = document.querySelector("body");
 const logoMask = document.querySelector(".bottom-part");
 const bottomInfo = document.querySelector("#about");
+const scrollIndic = document.querySelector(".scroll-indic");
 
 function updateOnScroll() {
   var topY = body.getBoundingClientRect().top;
@@ -150,6 +151,10 @@ function updateOnScroll() {
   topY < 0
     ? (header.classList.add("scrolled"), logoMask.classList.add("scrolled"), navWrapper.classList.add("scrolled"))
     : (header.classList.remove("scrolled"), logoMask.classList.remove("scrolled"), navWrapper.classList.remove("scrolled"));
+
+  if (scrollIndic) {
+    topY < 0 ? scrollIndic.classList.add('scrolled') : scrollIndic.classList.remove('scrolled');
+  }
 
   if (bottomY < window.innerHeight / 2) {
     // logoMask.classList.remove("scrolled");
@@ -238,7 +243,8 @@ preloadimages(workImg).done(function () {
       speedOut: 1.6,
       image1: img1,
       image2: img2,
-      displacementImage: window.location.href + "wp-content/themes/zakariaelk/src/img/png/heightMap.png",
+      // displacementImage: "http://192.168.11.101/personal/portfolio/zakariaelk-dev/wp-content/themes/zakariaelk/src/img/png/heightMap.png",
+      displacementImage: "https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/heightMap.png",
       imagesRatio: 640 / 1140,
     });
 

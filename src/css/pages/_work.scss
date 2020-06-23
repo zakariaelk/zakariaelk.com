@@ -1,368 +1,234 @@
 /*     
-    Name: _about.scss    
+    Name: _work.scss    
     Author: Zakaria El Khachia
     Client:
 */
 
-#work {
-  /* 1. Project Hero */
-
-  #project-hero {
-    width: 100%;
-    height: 100vh;
-    padding-top: 10vh;
-    padding-bottom: 2vh;
-
-    @media #{$max-tablet} {
-      padding-top: 14vh;
-      padding-bottom: 2vh;
+#work-list {
+  .boxed {
+    @media #{$max-phone} {
+      padding-left: 0;
+      padding-right: 0;
     }
   }
 
-  .hero-content {
-    @include size(100%, 100%);
+  /* Project Container */
+  .project-container {
+    width: 100%;
+    max-width: 1280px;
+    margin: 200px auto;
+    display: flex;
+    align-items: center;
 
-    .container-l {
-      @include size(100%, 100%);
+    @media #{$max-tablet} {
+      margin: 100px auto;
+    }
+
+    @media #{$max-phone} {
+      margin: 60px auto;
+    }
+
+    @media #{$max-tablet} {
+      display: block;
+    }
+
+    &:first-child {
+      padding-top: 140px;
+    }
+
+    &.inverted {
+      flex-direction: row-reverse;
 
       @media #{$max-tablet} {
-        align-content: center;
+        flex-direction: unset;
       }
     }
 
-    .banner-txt {
-      align-self: center;
-      opacity: 0;
-      transition: all 0.3s ease-in;
+    &:hover,
+    &:focus {
+      .project-text {
+        .project-action {
+          padding-right: 2rem;
+          &:after {
+            visibility: visible;
+            display: inline-block;
+            animation: slideChevron 1.2s ease-out infinite;
+          }
+        }
+      }
+    }
+
+    /* Project Visual */
+    .project-visual {
+      width: 60%;
+      height: 100%;
+      margin: auto;
+      display: block;
+      position: relative;
+      box-sizing: content-box;
+      cursor: pointer;
 
       @media #{$max-tablet} {
-        margin-bottom: 4rem;
+        width: 100%;
       }
 
-      h1 {
-        @extend .size-2;
-        margin-bottom: 1rem;
+      @media #{$max-phone} {
+        padding-bottom: 0;
+        transition: $t-all;
+      }
+
+      a {
+        @include size(100%, 100%);
+        display: flex;
+
+        &:after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          right: 0;
+          z-index: 1;
+          background-color: $white;
+          transition: all 1.5s cubic-bezier(0.19, 1, 0.22, 1);
+
+          @media #{$max-tablet} {
+            display: none;
+          }
+        }
+
+        &.on {
+          &:after {
+            width: 0;
+          }
+
+          h3 {
+            opacity: 1;
+          }
+        }
+      }
+
+      img {
+        position: relative;
+
+        &.img-1 {
+          display: none;
+          @media #{$max-tablet} {
+            @include size(100%, 100%);
+            display: block;
+            object-fit: cover;
+          }
+        }
+
+        &.img-2 {
+          opacity: 0;
+          visibility: 0;
+          @media #{$max-tablet} {
+            display: none;
+          }
+        }
+      }
+
+      canvas {
+        padding-bottom: 30px;
+        position: absolute;
+        top: 0;
+        left: 0;
+
+        @media #{$max-tablet} {
+          display: none;
+        }
+      }
+
+      /* Hover Status on Work Item */
+
+      &:hover {
+        canvas {
+        }
+      }
+    }
+
+    /* Project Text */
+
+    .project-text {
+      width: 40%;
+      padding-left: 3rem;
+      opacity: 0;
+      transform: translate3d(0, 30px, 0);
+      transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
+
+      &.on {
+        opacity: 1;
+        transform: translate3d(0, 0px, 0);
+      }
+
+      @media #{$max-laptop} {
+        padding-left: 2.5rem;
+      }
+
+      @media #{$max-tablet} {
+        width: 100%;
+        padding: 1rem 0;
+      }
+
+      @media #{$max-phone} {
+        padding: 1.3rem 1rem;
+      }
+
+      .project-title {
+        @extend .size-3;
+        color: $black;
+        bottom: 1.75rem;
+        left: 2rem;
         text-transform: capitalize;
-        line-height: 1.1;
+        cursor: pointer;
       }
 
       .desc {
         @extend .size-5;
-        width: 90%;
-        max-width: 400px;
-        line-height: 1.3;
+        max-width: 360px;
+        margin: 1rem 0 1.5rem;
+
+        @media #{$max-tablet} {
+          max-width: 60%;
+          margin: 0.5rem 0 1.5rem;
+        }
 
         @media #{$max-phone} {
           max-width: 100%;
         }
       }
 
-      .discover {
-        position: relative;
-        font-family: $FontRegular;
-        text-decoration: underline;
-        display: block;
-        // opacity: 0;
-        transform: translateY(15px);
-        transition: all 0.3s ease;
+      .project-tags {
+        font-size: 14px;
+        max-width: 100%;
+        font-style: italic;
+        color: #8b8b8b;
 
-        &:hover {
-          transform: translate3d(0.2rem, 15px, 0) skewX(-10deg);
+        a {
+          color: #8b8b8b;
+          &:hover {
+            color: $black;
+          }
         }
-
-        span {
-          transform: rotate(90deg);
-        }
-      }
-
-      &.on {
-        opacity: 1;
-        transform: translate3d(0, 0, 0);
-      }
-    }
-
-    .banner-visual {
-      align-self: center;
-      width: auto;
-      position: relative;
-      overflow: hidden;
-
-      &:after {
-        content: "";
-        position: absolute;
-        width: 100%;
-        height: 100%;
-        top: 0;
-        right: 0;
-        background-color: $white;
-        transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
-      }
-
-      &.on {
-        &:after {
-          width: 0;
-        }
-      }
-
-      @media #{$max-tablet} {
-        height: auto;
-      }
-
-      img {
-        width: 100%;
-        margin: auto;
-        object-fit: cover;
-
-        @media #{$max-tablet} {
-          height: auto;
-        }
-      }
-    }
-  }
-
-  /* 2. Project Intro / Info */
-
-  #project-info {
-    padding: 180px 0;
-
-    @media #{$max-tablet} {
-      padding: 0px 0px 100px;
-    }
-
-    @media #{$max-phone} {
-      padding: 60px 0px;
-    }
-  }
-
-  .info-content {
-    .info-title {
-      h2 {
-        @extend .size-3;
-        text-transform: lowercase;
-        text-align: center;
-
-        @media #{$max-tablet} {
-          text-align: left;
-          margin-bottom: 1.2rem;
-        }
-      }
-    }
-
-    .info-details {
-      max-width: 768px;
-      .info-intro {
-        @extend .size-5;
-        margin-bottom: 100px;
-
-        @media #{$max-tablet} {
-          margin-bottom: 60px;
-        }
-      }
-
-      .info-list-container {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
 
         @media #{$max-phone} {
-          flex-direction: column;
-        }
-
-        .info-list {
-          @media #{$max-phone} {
-            margin-bottom: 1.5rem;
-          }
-
-          .list-title {
-            color: $gray;
-            margin-bottom: 0.5rem;
-            display: block;
-
-            @media #{$max-phone} {
-              margin-bottom: 0.2rem;
-              // font-size: 18px;
-            }
-          }
-
-          .list-details {
-            @extend .size-5;
-            line-height: 1.6;
-            font-family: $FontBold;
-            letter-spacing: 0px;
-            text-transform: lowercase;
-
-            @media #{$max-phone} {
-              line-height: 1.4;
-            }
-
-            &.site-link {
-              overflow: hidden;
-              position: relative;
-              display: inline-block;
-              color: $black;
-              padding: 0rem 0.4rem;
-              margin-left: -0.4rem;
-              line-height: 1.3;
-              transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-              &:before {
-                content: "";
-                position: absolute;
-                top: 0%;
-                left: 0%;
-                transform: translate3d(-110%, 0, 0);
-                width: 100%;
-                z-index: -1;
-                height: 100%;
-                background-color: $black;
-                transition: all 0.3s ease;
-              }
-
-              &:after {
-                content: ">";
-                display: inline-block;
-                vertical-align: middle;
-                margin-left: 0px;
-                animation: slideChevron 1.2s ease-out infinite;
-              }
-
-              &:hover,
-              &:focus {
-                color: $white;
-
-                a {
-                  display: inline-block;
-                  color: $white;
-                }
-
-                &:before {
-                  transform: translate3d(0%, 0, 0);
-                }
-              }
-            }
-          }
-
-          .site-link-note {
-            font-size: 14px;
-            max-width: 200px;
-            margin-top: 0.8rem;
-            font-style: italic;
-            color: #666666;
-
-            @media #{$max-phone} {
-              font-size: 12px;
-              margin-top: 0.2rem;
-            }
-          }
+          font-size: 12px;
         }
       }
-    }
-  }
 
-  /* 3. Project Visuals */
-
-  #project-visuals {
-  }
-
-  .visual-content {
-    .visual-figure {
-      background-color: #f9f9f9;
-      margin-bottom: 70px;
-      padding: 130px;
-
-      @media #{$max-laptop} {
-        padding: 70px;
-      }
-
-      @media #{$max-tablet} {
-        padding: 0;
-      }
-
-      @media #{$max-phone} {
-        margin-bottom: 4rem;
-      }
-
-      img {
-        max-width: 1140px;
-        width: 100%;
-        height: auto;
-        margin: auto;
-        display: block;
-        padding: 0;
-        box-shadow: 1px 1px 20px 6px #f3f3f3;
-        opacity: 0;
-        transition: all 0.4s ease 0.2s;
-
-        &.on {
-          opacity: 1;
-        }
-      }
-    }
-  }
-
-  .next-post-nav {
-    display: flex;
-    margin: auto;
-    padding: 4rem 0;
-    justify-content: center;
-
-    @media #{$max-phone} {
-      padding: 4rem 0;
-    }
-
-    .next-link {
-      @extend .size-6;
-      margin: 0rem;
-      align-self: center;
-      color: $black !important;
-
-      &:after {
-        content: ">";
-        align-self: flex-end;
-        margin: 0 1rem;
-      }
-    }
-
-    .next-label {
-      @extend .size-3;
-      position: relative;
-      overflow: hidden;
-      display: block;
-      text-transform: capitalize;
-      padding: 0rem 0.4rem;
-      line-height: 1.3;
-      font-family: $FontBold;
-      transition: all 0.4s cubic-bezier(0.39, 0.575, 0.565, 1);
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: 0%;
-        left: 0%;
-        transform: translate3d(-110%, 0, 0);
-        width: 100%;
-        z-index: -1;
-        height: 100%;
-        background-color: $black;
-        transition: all 0.3s ease;
-
-        @media #{$max-tablet} {
-          height: 2px;
-          top: 92%;
-        }
-      }
-    }
-
-    &:hover {
-      .next-label {
+      .project-action {
+        padding: 0.4rem 0.7rem;
+        background: $black;
         color: $white;
+        transition: all 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
 
-        @media #{$max-tablet} {
-          color: $black;
-        }
-
-        &:before {
-          transform: translate3d(0%, 0, 0);
+        &:after {
+          content: ">";
+          position: absolute;
+          visibility: hidden;
+          vertical-align: middle;
+          margin-left: 0.6rem;
         }
       }
     }

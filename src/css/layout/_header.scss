@@ -11,6 +11,8 @@ header {
   background: $white;
   transition: $t-all;
   z-index: 20;
+  background-color: hsla(0, 0%, 100%, 0.68);
+  backdrop-filter: saturate(180%) blur(20px);
 
   @media #{$max-phone} {
     padding: 2rem 2rem 1rem;
@@ -28,7 +30,6 @@ header {
   }
 
   .top-header {
-    background: $white;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -51,29 +52,33 @@ header {
 
         .bottom-part {
           @extend .size-6;
+          width: 100%;
           font-family: $FontRegular;
+          white-space: nowrap;
           position: absolute;
           overflow: hidden;
-          transition: $t-all;
+          transition: width 0.5s ease;
 
-          &:after {
-            content: "";
-            display: inline-block;
-            @include size(0%, 110%);
-            position: absolute;
-            top: -3%;
-            right: 0;
-            background-color: $white;
-            transition: all 0.5s ease;
-          }
+          // &:after {
+          //   content: "";
+          //   display: inline-block;
+          //   @include size(0%, 110%);
+          //   position: absolute;
+          //   top: -3%;
+          //   right: 0;
+          //   background-color: $white;
+          //   transition: all 0.5s ease;
+          // }
 
           &.scrolled {
+            width: 0;
+
             @media #{$max-phone} {
               opacity: 0;
             }
 
             &:after {
-              width: 100%;
+              // width: 100%;
 
               @media #{$max-phone} {
                 width: 0%;

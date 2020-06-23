@@ -3,40 +3,40 @@
 <head>
 
 <meta charset="utf-8" />
-<meta name="description" content="Zakaria Elk is a Web designer and frontend developer, from Casablanca, based in Beijing." />
+<meta name="description" content="Zakaria Elk is a UI designer and frontend developer, from Casablanca and based in Beijing." />
 <meta name="keywords" content="Web Designer, UI Designer, Frontend Developer, Web Developer, Freelance developer, China Freelance, SEO Specialist" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Zakaria Elk" />
-<title><?php if(is_front_page()){ ?>
-    <?php bloginfo( 'name' ); ?> | <?php bloginfo('description')?> 
-    <?php } else { ?>
-    <?php wp_title(""); ?> | <?php bloginfo( 'name' ); ?>
-<?php } ?>
+<title><?php if (is_front_page()) {?>
+    <?php bloginfo('name');?> | <?php bloginfo('description')?>
+    <?php } else {?>
+    <?php wp_title("");?> | <?php bloginfo('name');?>
+<?php }?>
 </title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="xmlrpc.html">  
+<link rel="pingback" href="xmlrpc.html">
 
 <!-- FAVICO -->
 <style type='text/css'>img#wpstats{display:none}</style><link rel="apple-touch-icon-precomposed" sizes="57x57" href="<?php echo get_site_url(); ?>/wp-content/themes/zakariaelk/src/img/favicon/zakaria-logo-57.png" />
 <link rel="apple-touch-icon-precomposed" sizes="72x72" href="<?php echo get_site_url(); ?>/wp-content/themes/zakariaelk/src/img/favicon/zakaria-logo-72.png" />
 <link rel="apple-touch-icon-precomposed" sizes="144x144" href="<?php echo get_site_url(); ?>/wp-content/themes/zakariaelk/src/img/favicon/zakaria-logo-144.png" />
-<link rel="icon" href="<?php echo get_site_url(); ?>/wp-content/themes/zakariaelk/src/img/favicon/zakaria-logo.png" />  
+<link rel="icon" href="<?php echo get_site_url(); ?>/wp-content/themes/zakariaelk/src/img/favicon/zakaria-logo.png" />
 
 <!-- Call Styles -->
-<?php wp_head(); ?>
+<?php wp_head();?>
 
 
 </head>
 
-<body   <?php 
-        if(is_page()) { 
-          if(is_front_page()){ 
-            echo 'id="home"';
-            } else { 
-            echo 'id="' . $post->post_name . '"'; 
-            } 
-          } else { echo 'id="work"'; }?>
+<body   <?php
+if (is_page()) {
+    if (is_front_page()) {
+        echo 'id="home"';
+    } else {
+        echo 'id="' . $post->post_name . '"';
+    }
+} else {echo 'id="work"';}?>
           >
 
     <!-- Loading Module -->
@@ -49,7 +49,7 @@
     <!-- Site Wrapper -->
     <div class="site-wrapper">
         <header>
-            
+
         <!-- Top Header -->
             <div class="top-header">
                 <!-- Logo -->
