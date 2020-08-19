@@ -26,7 +26,7 @@ $cover_id = get_post_thumbnail_id();
 
                     <div class="welcome-statement">
                         <div class="dynamic-welcome"><span></span></div>
-                        <div class="static-welcome"><span>welcome to my web design portfolio</span></div>
+                        <div class="static-welcome"><span>welcome to my digital design world</span></div>
                         <a href="#home-work" class="discover scroll">
                             to work.
                         </a>

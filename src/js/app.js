@@ -228,7 +228,7 @@ if (rippleObj) {
 const workImg = Array.from(document.querySelectorAll('.project-visual img'));
 
 
-preloadimages(workImg).done(function () {
+/* preloadimages(workImg).done(function () {
 
   [].forEach.call(workItem, function (item) {
     const imgWrapper = item.querySelector('.project-visual a');
@@ -253,7 +253,7 @@ preloadimages(workImg).done(function () {
   });
 
 })
-
+ */
 
 
 

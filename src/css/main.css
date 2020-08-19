@@ -2144,6 +2144,7 @@ svg,
           align-items: center;
   /* Project Visual */
   /* Project Text */
+  /* project-container hover */
 }
 
 @media only screen and (max-width: 991px) {
@@ -2182,17 +2183,6 @@ svg,
         -ms-flex-direction: unset;
             flex-direction: unset;
   }
-}
-
-#work-list .project-container:hover .project-text .project-action, #work-list .project-container:focus .project-text .project-action {
-  padding-right: 2rem;
-}
-
-#work-list .project-container:hover .project-text .project-action:after, #work-list .project-container:focus .project-text .project-action:after {
-  visibility: visible;
-  display: inline-block;
-  -webkit-animation: slideChevron 1.2s ease-out infinite;
-          animation: slideChevron 1.2s ease-out infinite;
 }
 
 #work-list .project-container .project-visual {
@@ -2258,10 +2248,12 @@ svg,
 
 #work-list .project-container .project-visual img {
   position: relative;
+  -webkit-transition: all 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
+  transition: all 0.6s cubic-bezier(0.39, 0.575, 0.565, 1);
 }
 
 #work-list .project-container .project-visual img.img-1 {
-  display: none;
+  opacity: 1;
 }
 
 @media only screen and (max-width: 991px) {
@@ -2276,7 +2268,7 @@ svg,
 
 #work-list .project-container .project-visual img.img-2 {
   opacity: 0;
-  visibility: 0;
+  position: absolute;
 }
 
 @media only screen and (max-width: 991px) {
@@ -2304,8 +2296,10 @@ svg,
   opacity: 0;
   -webkit-transform: translate3d(0, 30px, 0);
           transform: translate3d(0, 30px, 0);
-  -webkit-transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
-  transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
+  -webkit-transition: opacity 0.3s ease 0.1s, -webkit-transform 0.6s ease;
+  transition: opacity 0.3s ease 0.1s, -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease, opacity 0.3s ease 0.1s;
+  transition: transform 0.6s ease, opacity 0.3s ease 0.1s, -webkit-transform 0.6s ease;
 }
 
 #work-list .project-container .project-text.on {
@@ -2396,6 +2390,37 @@ svg,
   margin-left: 0.6rem;
 }
 
+#work-list .project-container:hover .project-visual img.img-1, #work-list .project-container:focus .project-visual img.img-1 {
+  opacity: 0;
+}
+
+@media only screen and (max-width: 991px) {
+  #work-list .project-container:hover .project-visual img.img-1, #work-list .project-container:focus .project-visual img.img-1 {
+    opacity: 1;
+  }
+}
+
+#work-list .project-container:hover .project-visual img.img-2, #work-list .project-container:focus .project-visual img.img-2 {
+  opacity: 1;
+}
+
+@media only screen and (max-width: 991px) {
+  #work-list .project-container:hover .project-visual img.img-2, #work-list .project-container:focus .project-visual img.img-2 {
+    opacity: 0;
+  }
+}
+
+#work-list .project-container:hover .project-text .project-action, #work-list .project-container:focus .project-text .project-action {
+  padding-right: 2rem;
+}
+
+#work-list .project-container:hover .project-text .project-action:after, #work-list .project-container:focus .project-text .project-action:after {
+  visibility: visible;
+  display: inline-block;
+  -webkit-animation: slideChevron 1.2s ease-out infinite;
+          animation: slideChevron 1.2s ease-out infinite;
+}
+
 /*     
     Name: _single-work.scss    
     Author: Zakaria El Khachia
@@ -2445,14 +2470,22 @@ svg,
   opacity: 0;
   -webkit-transform: translate3d(0, 30px, 0);
           transform: translate3d(0, 30px, 0);
-  -webkit-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
-  transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0.1s;
+  -webkit-transition: opacity 0.3s ease 0.1s, -webkit-transform 0.6s ease;
+  transition: opacity 0.3s ease 0.1s, -webkit-transform 0.6s ease;
+  transition: transform 0.6s ease, opacity 0.3s ease 0.1s;
+  transition: transform 0.6s ease, opacity 0.3s ease 0.1s, -webkit-transform 0.6s ease;
 }
 
 @media only screen and (max-width: 991px) {
   #work .hero-content .banner-txt {
     margin-bottom: 4rem;
   }
+}
+
+#work .hero-content .banner-txt.on {
+  opacity: 1;
+  -webkit-transform: translate3d(0, 0px, 0);
+          transform: translate3d(0, 0px, 0);
 }
 
 #work .hero-content .banner-txt h1 {
@@ -2492,12 +2525,6 @@ svg,
 #work .hero-content .banner-txt .discover span {
   -webkit-transform: rotate(90deg);
           transform: rotate(90deg);
-}
-
-#work .hero-content .banner-txt.on {
-  opacity: 1;
-  -webkit-transform: translate3d(0, 0, 0);
-          transform: translate3d(0, 0, 0);
 }
 
 #work .hero-content .banner-visual {

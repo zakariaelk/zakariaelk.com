@@ -3,7 +3,7 @@
 <head>
 
 <meta charset="utf-8" />
-<meta name="description" content="Zakaria Elk is a UI designer and frontend developer, from Casablanca and based in Beijing." />
+<meta name="description" content="UI designer and frontend developer, from Casablanca and based in Beijing" />
 <meta name="keywords" content="Web Designer, UI Designer, Frontend Developer, Web Developer, Freelance developer, China Freelance, SEO Specialist" />
 <meta name="robots" content="index, follow" />
 <meta name="author" content="Zakaria Elk" />
@@ -56,7 +56,7 @@ if (is_page()) {
                 <div class="logo-link">
                     <a href="<?php echo get_site_url(); ?>">
                         <span class="top-part">Zakaria Elk.</span>
-                        <span class="bottom-part">Web designer & frontend developer</span>
+                        <span class="bottom-part">UX Designer & Frontend Developer</span>
                     </a>
                 </div>
 
