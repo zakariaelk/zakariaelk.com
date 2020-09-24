@@ -3,10 +3,12 @@
 
             <section id="about">
                 <div class="about-container">
-                    <p class="intro">
+                    <div class="intro">
                         I love to <span class="mark"> express new ideas </span> through design and code.<br />
-                         When I am not working, I enjoy <span class="mark">running and playing the guitar</span> 🎸
-                    </p>
+                         When I am not working, I enjoy <span class="mark">running and playing the guitar</span>  <div class="guitar">🎸</div> 
+                    </div>
+
+                   
 
 
                     <div class="contact-info">
