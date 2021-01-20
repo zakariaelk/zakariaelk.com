@@ -16,7 +16,7 @@
   "dependencies": {
     "animejs": "^3.2.0",
     "clean-webpack-plugin": "^3.0.0",
-    "gsap": "^3.2.6",
+    "gsap": "^3.6.0",
     "hover-effect": "^1.1.0",
     "intersection-observer": "^0.7.0",
     "jquery": "^3.5.1",
